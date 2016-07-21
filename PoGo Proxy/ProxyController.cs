@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using Google.Protobuf;
@@ -13,13 +14,17 @@ namespace PoGo_Proxy
     {
         private readonly ProxyServer _proxyServer;
 
-        private const string Ip = "192.168.0.19";
-        private const int Port = 8081;
-
+        public string Ip { get; }
+        public int Port { get; }
         public ApiLogger ApiLogger { get; }
 
-        public ProxyController()
+        public TextWriter Out { get; set; }
+
+        public ProxyController(string ipAddress, int port)
         {
+            Ip = ipAddress;
+            Port = port;
+
             _proxyServer = new ProxyServer();
             ApiLogger = new ApiLogger();
         }
@@ -39,7 +44,7 @@ namespace PoGo_Proxy
             // Start proxy server
             _proxyServer.Start();
 
-            Console.WriteLine($"[+++] Listening at {explicitEndPoint.IpAddress}:{explicitEndPoint.Port} ");
+            if (Out != StreamWriter.Null) Out.WriteLine($"[+++] Proxy started: listening at {explicitEndPoint.IpAddress}:{explicitEndPoint.Port} ");
         }
 
         public void Stop()
@@ -53,10 +58,10 @@ namespace PoGo_Proxy
             // Stop server
             _proxyServer.Stop();
 
-            Console.WriteLine("[---] Server stopped");
+            if (Out != StreamWriter.Null) Out.WriteLine("[---] Proxy stopped");
         }
 
-        public async Task OnRequest(object sender, SessionEventArgs e)
+        private async Task OnRequest(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.RequestUri.Host != "pgorelease.nianticlabs.com") return;
 
@@ -67,11 +72,10 @@ namespace PoGo_Proxy
 
             var parsedMessages = ApiLogger.AddRequest(requestEnvelope, callTime);
 
-            Console.WriteLine(parsedMessages);
+            if (Out != StreamWriter.Null) Out.WriteLine(parsedMessages);
         }
 
-
-        public async Task OnResponse(object sender, SessionEventArgs e)
+        private async Task OnResponse(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.RequestUri.Host != "pgorelease.nianticlabs.com") return;
 
@@ -84,7 +88,7 @@ namespace PoGo_Proxy
 
                 var parsedMessages = ApiLogger.AddResponse(responseEnvelope, callTime);
 
-                Console.WriteLine(parsedMessages);
+                if (Out != StreamWriter.Null) Out.WriteLine(parsedMessages);
             }
         }
 
@@ -93,7 +97,7 @@ namespace PoGo_Proxy
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public Task OnCertificateValidation(object sender, CertificateValidationEventArgs e)
+        private Task OnCertificateValidation(object sender, CertificateValidationEventArgs e)
         {
             //set IsValid to true/false based on Certificate Errors
             if (e.SslPolicyErrors == System.Net.Security.SslPolicyErrors.None)
@@ -109,7 +113,7 @@ namespace PoGo_Proxy
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public Task OnCertificateSelection(object sender, CertificateSelectionEventArgs e)
+        private Task OnCertificateSelection(object sender, CertificateSelectionEventArgs e)
         {
             return Task.FromResult(0);
         }

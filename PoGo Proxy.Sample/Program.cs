@@ -5,21 +5,25 @@ namespace PoGo_Proxy.Sample
 {
     class Program
     {
-        private static readonly ProxyController Controller = new ProxyController();
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hit any key to exit..");
             Console.WriteLine();
 
-            Controller.Start();
+            var controller = new ProxyController("192.168.0.19", 8081)
+            {
+                Out = Console.Out
+            };
 
+            controller.Start();
+
+            // If the user presses a key, exit
             Console.Read();
 
-            Controller.Stop();
+            controller.Stop();
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), DateTime.Now.ToString("yyyy-MM-dd-hh-mm") + "-log.json");
-            File.WriteAllText(path, Controller.ApiLogger.ToString());
+            File.WriteAllText(path, controller.ApiLogger.ToString());
         }
     }
 }
