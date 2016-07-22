@@ -89,7 +89,14 @@ namespace PoGo_Proxy
             // Parse all the requests
             foreach (Request request in requestEnvelope.Requests)
             {
-                var type = Type.GetType("POGOProtos.Networking.Requests.Messages." + request.RequestType + "Message");
+                // Had to add assembly name to end of typeName string since protocs.cs files are in a different assembly
+                var type = Type.GetType("POGOProtos.Networking.Requests.Messages." + request.RequestType + "Message,PoGo Proxy.Protocs");
+
+                if (type == null)
+                {
+                    if (Out != StreamWriter.Null) Out.WriteLine("[***] GetType returns null for requestType: " + request.RequestType);
+                    if (Out != StreamWriter.Null) Out.WriteLine("[***] Check if POGOProtos.Networking.Requests.Messages." + request.RequestType + "Message exists.");
+                }
 
                 var instance = (IMessage)Activator.CreateInstance(type);
                 instance.MergeFrom(request.RequestMessage);
@@ -124,13 +131,13 @@ namespace PoGo_Proxy
             };
             _apiBlocks.Add(args.RequestId, args);
 
-            //if (Out != StreamWriter.Null) Out.WriteLine(requests);
+            //if (Out != StreamWriter.Null) Out.WriteLine(requestBlock);
         }
 
         private async Task OnResponse(object sender, SessionEventArgs e)
         {
             if (e.WebSession.Request.RequestUri.Host != "pgorelease.nianticlabs.com") return;
-            
+
             if (e.WebSession.Response.ResponseStatusCode == "200")
             {
                 // Get session data
@@ -175,7 +182,14 @@ namespace PoGo_Proxy
                 // Parse the responses
                 for (int i = 0; i < responseEnvelope.Returns.Count; i++)
                 {
-                    var type = Type.GetType("POGOProtos.Networking.Responses." + requestTypes[i] + "Response");
+                    // Had to add assembly name to end of typeName string since protocs.cs files are in a different assembly
+                    var type = Type.GetType("POGOProtos.Networking.Responses." + requestTypes[i] + "Response,PoGo Proxy.Protocs");
+
+                    if (type == null)
+                    {
+                        if (Out != StreamWriter.Null) Out.WriteLine("[***] GetType returns null for requestType: " + requestTypes[i]);
+                        if (Out != StreamWriter.Null) Out.WriteLine("[***] Check if POGOProtos.Networking.Requests.Messages." + requestTypes[i] + "Message exists.");
+                    }
 
                     var instance = (IMessage)Activator.CreateInstance(type);
                     instance.MergeFrom(responseEnvelope.Returns[i]);
@@ -203,7 +217,7 @@ namespace PoGo_Proxy
                 _apiBlocks.Remove(args.RequestId);
                 RequestHandled?.Invoke(this, args);
 
-                //if (Out != StreamWriter.Null) Out.WriteLine(responses);
+                //if (Out != StreamWriter.Null) Out.WriteLine(responseBlock);
             }
         }
 

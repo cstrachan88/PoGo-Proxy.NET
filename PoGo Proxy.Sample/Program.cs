@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using POGOProtos.Networking.Requests;
-using POGOProtos.Networking.Responses;
 
 namespace PoGo_Proxy.Sample
 {
@@ -44,17 +42,10 @@ namespace PoGo_Proxy.Sample
             // Update log
             _apiLog.Add(e);
 
+            Console.WriteLine("Response Block -");
             foreach (var responsePair in e.ResponseBlock.ParsedMessages)
             {
-                if (responsePair.Key == RequestType.GetInventory)
-                {
-                    var inventory = responsePair.Value as GetInventoryResponse;
-
-                    if (inventory != null && inventory.Success)
-                    {
-                        Console.WriteLine(JsonConvert.SerializeObject(inventory.InventoryDelta).Substring(0,120));
-                    }
-                }
+                Console.WriteLine("  " + responsePair.Key);
             }
         }
     }
