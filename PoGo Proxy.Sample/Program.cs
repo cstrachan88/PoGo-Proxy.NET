@@ -1,12 +1,10 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
 
 namespace PoGo_Proxy.Sample
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Hit any key to exit..");
             Console.WriteLine();
@@ -19,10 +17,12 @@ namespace PoGo_Proxy.Sample
 
             controller.Start();
 
-            // If the user presses a key, exit
-            Console.Read();
+            // Press a key to stop proxy, then press a key to exit
+            Console.ReadKey();
 
             controller.Stop();
+
+            Console.ReadKey();
         }
 
         private static void Controller_ResponseReceived(object sender, ResponseEventArgs e)

@@ -84,12 +84,6 @@ namespace PoGo_Proxy
             var codedInputStream = new CodedInputStream(bodyBytes);
             var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedInputStream);
 
-            // TODO figure out why the requests are doubling up and what to do about it
-            if (_responseBlocks.ContainsKey(requestEnvelope.RequestId))
-            {
-                throw new ArgumentException($"Request Id ({requestEnvelope.RequestId}) already exists.");
-            }
-
             // Initialize the request block
             var requests = new MessageBlock
             {
@@ -108,6 +102,22 @@ namespace PoGo_Proxy
                 instance.MergeFrom(request.RequestMessage);
 
                 requests.ParsedMessages.Add(request.RequestType, instance);
+            }
+
+            // TODO figure out why the requests are doubling up and what to do about it
+            if (_responseBlocks.ContainsKey(requestEnvelope.RequestId))
+            {
+                if (Out != StreamWriter.Null)
+                {
+                    Out.WriteLine("[*]");
+                    Out.WriteLine($"[*] Request Id({requestEnvelope.RequestId}) already exists.");
+
+                    Out.WriteLine($"[*] Old request:\n{_responseBlocks[requestEnvelope.RequestId].Requests}");
+                    Out.WriteLine($"[*] New request:\n{requests}");
+
+                    Out.WriteLine("[*]");
+                }
+                //throw new ArgumentException($"Request Id ({requestEnvelope.RequestId}) already exists.");
             }
 
             // Initialize a new request/response paired block and track it to update response
@@ -133,12 +143,6 @@ namespace PoGo_Proxy
                 var codedInputStream = new CodedInputStream(bodyBytes);
                 var responseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedInputStream);
 
-                // TODO what scenarios would cause this
-                if (!_responseBlocks.ContainsKey(responseEnvelope.RequestId))
-                {
-                    throw new KeyNotFoundException($"Request doesn't exist with specified RequestId ({responseEnvelope.RequestId}).");
-                }
-
                 // Initialize the response block
                 var responses = new MessageBlock
                 {
@@ -155,7 +159,20 @@ namespace PoGo_Proxy
                 // TODO figure out why this is happening
                 if (args.Requests.ParsedMessages.Count != responseEnvelope.Returns.Count)
                 {
-                    throw new RankException("Request messages count is different than the response messages count.");
+                    // Initial request is asking for 5 messages, but three of them are empty - so only getting back 2 responses
+                    // These messages are not null - how to deal with this
+
+
+                    if (Out != StreamWriter.Null)
+                    {
+                        Out.WriteLine("[*]");
+                        Out.WriteLine($"[*] Request messages count ({args.Requests.ParsedMessages.Count}) is different than the response messages count ({responseEnvelope.Returns.Count}).");
+
+                        Out.WriteLine($"[*] Request:\n{args.Requests}");
+
+                        Out.WriteLine("[*]");
+                    }
+                    //throw new RankException("Request messages count is different than the response messages count.");
                 }
 
                 // Grab request types
@@ -170,6 +187,21 @@ namespace PoGo_Proxy
                     instance.MergeFrom(responseEnvelope.Returns[i]);
 
                     responses.ParsedMessages.Add(requestTypes[i], instance);
+                }
+
+                // TODO what scenarios would cause this
+                if (!_responseBlocks.ContainsKey(responseEnvelope.RequestId))
+                {
+                    if (Out != StreamWriter.Null)
+                    {
+                        Out.WriteLine("[*]");
+                        Out.WriteLine($"[*] Request doesn't exist with specified RequestId ({responseEnvelope.RequestId}).");
+
+                        Out.WriteLine($"[*] Response:\n{responses}");
+
+                        Out.WriteLine("[*]");
+                    }
+                    //throw new KeyNotFoundException($"Request doesn't exist with specified RequestId ({responseEnvelope.RequestId}).");
                 }
 
                 // Remove block from dictionary and invoke event handler
