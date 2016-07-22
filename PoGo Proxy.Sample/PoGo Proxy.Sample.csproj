@@ -60,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PoGo Proxy.Protocs\PoGo Proxy.Protocs.csproj">
+      <Project>{2c0c77fd-ff8f-4e2e-b70b-c2d51be64d6e}</Project>
+      <Name>PoGo Proxy.Protocs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PoGo Proxy\PoGo Proxy.csproj">
       <Project>{694b51ed-825b-42a4-9c0b-17683cf8e244}</Project>
       <Name>PoGo Proxy</Name>
