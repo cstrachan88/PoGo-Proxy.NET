@@ -44,7 +44,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             "ZGVuYW1lGAEgASgJIigKFENsYWltQ29kZW5hbWVNZXNzYWdlEhAKCGNvZGVu",
             "YW1lGAEgASgJIhoKGENvbGxlY3REYWlseUJvbnVzTWVzc2FnZSIiCiBDb2xs",
             "ZWN0RGFpbHlEZWZlbmRlckJvbnVzTWVzc2FnZSJwChREaXNrRW5jb3VudGVy",
-            "TWVzc2FnZRIUCgxlbmNvdW50ZXJfaWQYASABKAYSDwoHZm9ydF9pZBgCIAEo",
+            "TWVzc2FnZRIUCgxlbmNvdW50ZXJfaWQYASABKAQSDwoHZm9ydF9pZBgCIAEo",
             "CRIXCg9wbGF5ZXJfbGF0aXR1ZGUYAyABKAESGAoQcGxheWVyX2xvbmdpdHVk",
             "ZRgEIAEoASIeChxEb3dubG9hZEl0ZW1UZW1wbGF0ZXNNZXNzYWdlIqoBCiJE",
             "b3dubG9hZFJlbW90ZUNvbmZpZ1ZlcnNpb25NZXNzYWdlEiwKCHBsYXRmb3Jt",
@@ -1552,8 +1552,8 @@ namespace POGOProtos.Networking.Requests.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
-        output.WriteRawTag(9);
-        output.WriteFixed64(EncounterId);
+        output.WriteRawTag(8);
+        output.WriteUInt64(EncounterId);
       }
       if (FortId.Length != 0) {
         output.WriteRawTag(18);
@@ -1573,7 +1573,7 @@ namespace POGOProtos.Networking.Requests.Messages {
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
-        size += 1 + 8;
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(EncounterId);
       }
       if (FortId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FortId);
@@ -1614,8 +1614,8 @@ namespace POGOProtos.Networking.Requests.Messages {
           default:
             input.SkipLastField();
             break;
-          case 9: {
-            EncounterId = input.ReadFixed64();
+          case 8: {
+            EncounterId = input.ReadUInt64();
             break;
           }
           case 18: {

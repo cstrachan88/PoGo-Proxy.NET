@@ -42,28 +42,28 @@ namespace POGOProtos.Data {
             "MiUuUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5FcXVpcHBlZEJhZGdlEkEKEGNv",
             "bnRhY3Rfc2V0dGluZ3MYDSABKAsyJy5QT0dPUHJvdG9zLkRhdGEuUGxheWVy",
             "LkNvbnRhY3RTZXR0aW5ncxI0CgpjdXJyZW5jaWVzGA4gAygLMiAuUE9HT1By",
-            "b3Rvcy5EYXRhLlBsYXllci5DdXJyZW5jeSKZAQoMUG9rZWRleEVudHJ5EhwK",
-            "FHBva2VkZXhfZW50cnlfbnVtYmVyGAEgASgFEhkKEXRpbWVzX2VuY291bnRl",
-            "cmVkGAIgASgFEhYKDnRpbWVzX2NhcHR1cmVkGAMgASgFEh4KFmV2b2x1dGlv",
-            "bl9zdG9uZV9waWVjZXMYBCABKAUSGAoQZXZvbHV0aW9uX3N0b25lcxgFIAEo",
-            "BSL1BQoLUG9rZW1vbkRhdGESCgoCaWQYASABKAYSLwoKcG9rZW1vbl9pZBgC",
-            "IAEoDjIbLlBPR09Qcm90b3MuRW51bXMuUG9rZW1vbklkEgoKAmNwGAMgASgF",
-            "Eg8KB3N0YW1pbmEYBCABKAUSEwoLc3RhbWluYV9tYXgYBSABKAUSLQoGbW92",
-            "ZV8xGAYgASgOMh0uUE9HT1Byb3Rvcy5FbnVtcy5Qb2tlbW9uTW92ZRItCgZt",
-            "b3ZlXzIYByABKA4yHS5QT0dPUHJvdG9zLkVudW1zLlBva2Vtb25Nb3ZlEhgK",
-            "EGRlcGxveWVkX2ZvcnRfaWQYCCABKAUSEgoKb3duZXJfbmFtZRgJIAEoCRIO",
-            "CgZpc19lZ2cYCiABKAgSHAoUZWdnX2ttX3dhbGtlZF90YXJnZXQYCyABKAES",
-            "GwoTZWdnX2ttX3dhbGtlZF9zdGFydBgMIAEoARIOCgZvcmlnaW4YDiABKAUS",
-            "EAoIaGVpZ2h0X20YDyABKAISEQoJd2VpZ2h0X2tnGBAgASgCEhkKEWluZGl2",
-            "aWR1YWxfYXR0YWNrGBEgASgFEhoKEmluZGl2aWR1YWxfZGVmZW5zZRgSIAEo",
-            "BRIaChJpbmRpdmlkdWFsX3N0YW1pbmEYEyABKAUSFQoNY3BfbXVsdGlwbGll",
-            "chgUIAEoAhIQCghwb2tlYmFsbBgVIAEoBRIYChBjYXB0dXJlZF9jZWxsX2lk",
-            "GBYgASgEEhgKEGJhdHRsZXNfYXR0YWNrZWQYFyABKAUSGAoQYmF0dGxlc19k",
-            "ZWZlbmRlZBgYIAEoBRIYChBlZ2dfaW5jdWJhdG9yX2lkGBkgASgJEhgKEGNy",
-            "ZWF0aW9uX3RpbWVfbXMYGiABKAQSFAoMbnVtX3VwZ3JhZGVzGBsgASgFEiAK",
-            "GGFkZGl0aW9uYWxfY3BfbXVsdGlwbGllchgcIAEoBRIQCghmYXZvcml0ZRgd",
-            "IAEoBRIQCghuaWNrbmFtZRgeIAEoCRIRCglmcm9tX2ZvcnQYHyABKAVQAFAB",
-            "YgZwcm90bzM="));
+            "b3Rvcy5EYXRhLlBsYXllci5DdXJyZW5jeSKsAQoMUG9rZWRleEVudHJ5Ei8K",
+            "CnBva2Vtb25faWQYASABKA4yGy5QT0dPUHJvdG9zLkVudW1zLlBva2Vtb25J",
+            "ZBIZChF0aW1lc19lbmNvdW50ZXJlZBgCIAEoBRIWCg50aW1lc19jYXB0dXJl",
+            "ZBgDIAEoBRIeChZldm9sdXRpb25fc3RvbmVfcGllY2VzGAQgASgFEhgKEGV2",
+            "b2x1dGlvbl9zdG9uZXMYBSABKAUi9QUKC1Bva2Vtb25EYXRhEgoKAmlkGAEg",
+            "ASgGEi8KCnBva2Vtb25faWQYAiABKA4yGy5QT0dPUHJvdG9zLkVudW1zLlBv",
+            "a2Vtb25JZBIKCgJjcBgDIAEoBRIPCgdzdGFtaW5hGAQgASgFEhMKC3N0YW1p",
+            "bmFfbWF4GAUgASgFEi0KBm1vdmVfMRgGIAEoDjIdLlBPR09Qcm90b3MuRW51",
+            "bXMuUG9rZW1vbk1vdmUSLQoGbW92ZV8yGAcgASgOMh0uUE9HT1Byb3Rvcy5F",
+            "bnVtcy5Qb2tlbW9uTW92ZRIYChBkZXBsb3llZF9mb3J0X2lkGAggASgFEhIK",
+            "Cm93bmVyX25hbWUYCSABKAkSDgoGaXNfZWdnGAogASgIEhwKFGVnZ19rbV93",
+            "YWxrZWRfdGFyZ2V0GAsgASgBEhsKE2VnZ19rbV93YWxrZWRfc3RhcnQYDCAB",
+            "KAESDgoGb3JpZ2luGA4gASgFEhAKCGhlaWdodF9tGA8gASgCEhEKCXdlaWdo",
+            "dF9rZxgQIAEoAhIZChFpbmRpdmlkdWFsX2F0dGFjaxgRIAEoBRIaChJpbmRp",
+            "dmlkdWFsX2RlZmVuc2UYEiABKAUSGgoSaW5kaXZpZHVhbF9zdGFtaW5hGBMg",
+            "ASgFEhUKDWNwX211bHRpcGxpZXIYFCABKAISEAoIcG9rZWJhbGwYFSABKAUS",
+            "GAoQY2FwdHVyZWRfY2VsbF9pZBgWIAEoBBIYChBiYXR0bGVzX2F0dGFja2Vk",
+            "GBcgASgFEhgKEGJhdHRsZXNfZGVmZW5kZWQYGCABKAUSGAoQZWdnX2luY3Vi",
+            "YXRvcl9pZBgZIAEoCRIYChBjcmVhdGlvbl90aW1lX21zGBogASgEEhQKDG51",
+            "bV91cGdyYWRlcxgbIAEoBRIgChhhZGRpdGlvbmFsX2NwX211bHRpcGxpZXIY",
+            "HCABKAUSEAoIZmF2b3JpdGUYHSABKAUSEAoIbmlja25hbWUYHiABKAkSEQoJ",
+            "ZnJvbV9mb3J0GB8gASgFUABQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::POGOProtos.Enums.POGOProtosEnumsReflection.Descriptor, global::POGOProtos.Data.Player.POGOProtosDataPlayerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -71,7 +71,7 @@ namespace POGOProtos.Data {
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.DownloadUrlEntry), global::POGOProtos.Data.DownloadUrlEntry.Parser, new[]{ "AssetId", "Url", "Size", "Checksum" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.PlayerBadge), global::POGOProtos.Data.PlayerBadge.Parser, new[]{ "BadgeType", "Rank", "StartValue", "EndValue", "CurrentValue" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.PlayerData), global::POGOProtos.Data.PlayerData.Parser, new[]{ "CreationTimestampMs", "Username", "Team", "TutorialState", "Avatar", "MaxPokemonStorage", "MaxItemStorage", "DailyBonus", "EquippedBadge", "ContactSettings", "Currencies" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.PokedexEntry), global::POGOProtos.Data.PokedexEntry.Parser, new[]{ "PokedexEntryNumber", "TimesEncountered", "TimesCaptured", "EvolutionStonePieces", "EvolutionStones" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.PokedexEntry), global::POGOProtos.Data.PokedexEntry.Parser, new[]{ "PokemonId", "TimesEncountered", "TimesCaptured", "EvolutionStonePieces", "EvolutionStones" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.PokemonData), global::POGOProtos.Data.PokemonData.Parser, new[]{ "Id", "PokemonId", "Cp", "Stamina", "StaminaMax", "Move1", "Move2", "DeployedFortId", "OwnerName", "IsEgg", "EggKmWalkedTarget", "EggKmWalkedStart", "Origin", "HeightM", "WeightKg", "IndividualAttack", "IndividualDefense", "IndividualStamina", "CpMultiplier", "Pokeball", "CapturedCellId", "BattlesAttacked", "BattlesDefended", "EggIncubatorId", "CreationTimeMs", "NumUpgrades", "AdditionalCpMultiplier", "Favorite", "Nickname", "FromFort" }, null, null, null)
           }));
     }
@@ -1196,7 +1196,7 @@ namespace POGOProtos.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PokedexEntry(PokedexEntry other) : this() {
-      pokedexEntryNumber_ = other.pokedexEntryNumber_;
+      pokemonId_ = other.pokemonId_;
       timesEncountered_ = other.timesEncountered_;
       timesCaptured_ = other.timesCaptured_;
       evolutionStonePieces_ = other.evolutionStonePieces_;
@@ -1208,14 +1208,14 @@ namespace POGOProtos.Data {
       return new PokedexEntry(this);
     }
 
-    /// <summary>Field number for the "pokedex_entry_number" field.</summary>
-    public const int PokedexEntryNumberFieldNumber = 1;
-    private int pokedexEntryNumber_;
+    /// <summary>Field number for the "pokemon_id" field.</summary>
+    public const int PokemonIdFieldNumber = 1;
+    private global::POGOProtos.Enums.PokemonId pokemonId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PokedexEntryNumber {
-      get { return pokedexEntryNumber_; }
+    public global::POGOProtos.Enums.PokemonId PokemonId {
+      get { return pokemonId_; }
       set {
-        pokedexEntryNumber_ = value;
+        pokemonId_ = value;
       }
     }
 
@@ -1276,7 +1276,7 @@ namespace POGOProtos.Data {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PokedexEntryNumber != other.PokedexEntryNumber) return false;
+      if (PokemonId != other.PokemonId) return false;
       if (TimesEncountered != other.TimesEncountered) return false;
       if (TimesCaptured != other.TimesCaptured) return false;
       if (EvolutionStonePieces != other.EvolutionStonePieces) return false;
@@ -1287,7 +1287,7 @@ namespace POGOProtos.Data {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (PokedexEntryNumber != 0) hash ^= PokedexEntryNumber.GetHashCode();
+      if (PokemonId != 0) hash ^= PokemonId.GetHashCode();
       if (TimesEncountered != 0) hash ^= TimesEncountered.GetHashCode();
       if (TimesCaptured != 0) hash ^= TimesCaptured.GetHashCode();
       if (EvolutionStonePieces != 0) hash ^= EvolutionStonePieces.GetHashCode();
@@ -1302,9 +1302,9 @@ namespace POGOProtos.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (PokedexEntryNumber != 0) {
+      if (PokemonId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(PokedexEntryNumber);
+        output.WriteEnum((int) PokemonId);
       }
       if (TimesEncountered != 0) {
         output.WriteRawTag(16);
@@ -1327,8 +1327,8 @@ namespace POGOProtos.Data {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (PokedexEntryNumber != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PokedexEntryNumber);
+      if (PokemonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PokemonId);
       }
       if (TimesEncountered != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TimesEncountered);
@@ -1350,8 +1350,8 @@ namespace POGOProtos.Data {
       if (other == null) {
         return;
       }
-      if (other.PokedexEntryNumber != 0) {
-        PokedexEntryNumber = other.PokedexEntryNumber;
+      if (other.PokemonId != 0) {
+        PokemonId = other.PokemonId;
       }
       if (other.TimesEncountered != 0) {
         TimesEncountered = other.TimesEncountered;
@@ -1376,7 +1376,7 @@ namespace POGOProtos.Data {
             input.SkipLastField();
             break;
           case 8: {
-            PokedexEntryNumber = input.ReadInt32();
+            pokemonId_ = (global::POGOProtos.Enums.PokemonId) input.ReadEnum();
             break;
           }
           case 16: {
