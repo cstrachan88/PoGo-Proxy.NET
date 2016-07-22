@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using Newtonsoft.Json;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Requests;
 using Titanium.Web.Proxy;
@@ -156,13 +157,18 @@ namespace PoGo_Proxy
                 // Grab the paired request
                 var args = _apiBlocks[responseEnvelope.RequestId];
 
-                // Check if the requests and responses match up
-                // TODO figure out why this is happening
+                // The case of missmatched requests and responses seems to be a handshake. The inital request sends 5 messages and gets back 2 that are empty bytestrings
                 if (args.RequestBlock.ParsedMessages.Count != responseEnvelope.Returns.Count)
                 {
-                    // Initial request is asking for 5 messages, but three of them are empty - so only getting back 2 responses
-                    // These messages are not null - how to deal with this..
-                    // If ther is a way to know the response type without pairing with a request, then it's simple
+                    if ((args.RequestBlock.ParsedMessages.Count == 5 && responseEnvelope.Returns.Count == 2) &&
+                        (responseEnvelope.Returns[0].IsEmpty && responseEnvelope.Returns[1].IsEmpty))
+                    {
+                        if (Out != StreamWriter.Null) Out.WriteLine($"[*] Handshake complete\n");
+                        _apiBlocks.Remove(args.RequestId);
+                        return;
+                    }
+
+                    // If there is a case of missmatched requests and responses, and it doesn't look like a handshake, log it
 
                     if (Out != StreamWriter.Null)
                     {
@@ -177,6 +183,32 @@ namespace PoGo_Proxy
                         Out.WriteLine($"[*]\n");
                     }
                     //throw new RankException("Request messages count is different than the response messages count.");
+
+                    // TODO Going to try and parse the responses to each type, and see which one fits
+                    var requestTypesTest = args.RequestBlock.ParsedMessages.Keys.ToList();
+                    int responseIndex = 0;
+
+                    foreach (var responseBytes in responseEnvelope.Returns)
+                    {
+                        int start = responseIndex;
+                        int end = responseIndex + requestTypesTest.Count - responseEnvelope.Returns.Count;
+
+                        // Parse the responses
+                        for (int i = start; i < end; i++)
+                        {
+                            var type = Type.GetType("POGOProtos.Networking.Responses." + requestTypesTest[i] + "Response,PoGo Proxy.Protocs");
+
+                            var instance = (IMessage) Activator.CreateInstance(type);
+                            instance.MergeFrom(responseBytes);
+
+                            Out.WriteLine($"[*] Parsing as response {responseIndex} as {requestTypesTest[i]}");
+                            Out.WriteLine(JsonConvert.SerializeObject(instance));
+                        }
+
+                        responseIndex++;
+                        Out.WriteLine();
+                    }
+                    Out.WriteLine($"[*]\n");
                 }
 
                 // Grab request types
