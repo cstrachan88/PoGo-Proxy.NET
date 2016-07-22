@@ -218,6 +218,23 @@ namespace PoGo_Proxy
                 RequestHandled?.Invoke(this, args);
 
                 //if (Out != StreamWriter.Null) Out.WriteLine(responseBlock);
+
+                // Edit response
+                if (responseEnvelope.Returns.Count > 0)
+                {
+                    for (int i = 0; i < responseEnvelope.Returns.Count; i++)
+                    {
+                        IMessage msg = responseBlock.ParsedMessages[requestTypes[i]];
+                        responseEnvelope.Returns[i] = msg.ToByteString();
+                    }
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        responseEnvelope.WriteTo(ms);
+                        bodyBytes = ms.ToArray();
+                    }
+                    await e.SetResponseBody(bodyBytes);
+                }
             }
         }
 
