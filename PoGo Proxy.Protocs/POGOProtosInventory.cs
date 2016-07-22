@@ -35,7 +35,7 @@ namespace POGOProtos.Inventory {
             "R09Qcm90b3MuSW52ZW50b3J5LkVnZ0luY3ViYXRvclR5cGUSFgoOdXNlc19y",
             "ZW1haW5pbmcYBCABKAUSEgoKcG9rZW1vbl9pZBgFIAEoBBIXCg9zdGFydF9r",
             "bV93YWxrZWQYBiABKAESGAoQdGFyZ2V0X2ttX3dhbGtlZBgHIAEoASJKCg1F",
-            "Z2dJbmN1YmF0b3JzEjkKDWVnZ19pbmN1YmF0b3IYASABKAsyIi5QT0dPUHJv",
+            "Z2dJbmN1YmF0b3JzEjkKDWVnZ19pbmN1YmF0b3IYASADKAsyIi5QT0dPUHJv",
             "dG9zLkludmVudG9yeS5FZ2dJbmN1YmF0b3IihwEKDkludmVudG9yeURlbHRh",
             "Eh0KFW9yaWdpbmFsX3RpbWVzdGFtcF9tcxgBIAEoAxIYChBuZXdfdGltZXN0",
             "YW1wX21zGAIgASgDEjwKD2ludmVudG9yeV9pdGVtcxgDIAMoCzIjLlBPR09Q",
@@ -801,7 +801,7 @@ namespace POGOProtos.Inventory {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubators(EggIncubators other) : this() {
-      EggIncubator = other.eggIncubator_ != null ? other.EggIncubator.Clone() : null;
+      eggIncubator_ = other.eggIncubator_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -811,13 +811,12 @@ namespace POGOProtos.Inventory {
 
     /// <summary>Field number for the "egg_incubator" field.</summary>
     public const int EggIncubatorFieldNumber = 1;
-    private global::POGOProtos.Inventory.EggIncubator eggIncubator_;
+    private static readonly pb::FieldCodec<global::POGOProtos.Inventory.EggIncubator> _repeated_eggIncubator_codec
+        = pb::FieldCodec.ForMessage(10, global::POGOProtos.Inventory.EggIncubator.Parser);
+    private readonly pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator> eggIncubator_ = new pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.EggIncubator EggIncubator {
+    public pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator> EggIncubator {
       get { return eggIncubator_; }
-      set {
-        eggIncubator_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -833,14 +832,14 @@ namespace POGOProtos.Inventory {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(EggIncubator, other.EggIncubator)) return false;
+      if(!eggIncubator_.Equals(other.eggIncubator_)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (eggIncubator_ != null) hash ^= EggIncubator.GetHashCode();
+      hash ^= eggIncubator_.GetHashCode();
       return hash;
     }
 
@@ -851,18 +850,13 @@ namespace POGOProtos.Inventory {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (eggIncubator_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(EggIncubator);
-      }
+      eggIncubator_.WriteTo(output, _repeated_eggIncubator_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (eggIncubator_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EggIncubator);
-      }
+      size += eggIncubator_.CalculateSize(_repeated_eggIncubator_codec);
       return size;
     }
 
@@ -871,12 +865,7 @@ namespace POGOProtos.Inventory {
       if (other == null) {
         return;
       }
-      if (other.eggIncubator_ != null) {
-        if (eggIncubator_ == null) {
-          eggIncubator_ = new global::POGOProtos.Inventory.EggIncubator();
-        }
-        EggIncubator.MergeFrom(other.EggIncubator);
-      }
+      eggIncubator_.Add(other.eggIncubator_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -888,10 +877,7 @@ namespace POGOProtos.Inventory {
             input.SkipLastField();
             break;
           case 10: {
-            if (eggIncubator_ == null) {
-              eggIncubator_ = new global::POGOProtos.Inventory.EggIncubator();
-            }
-            input.ReadMessage(eggIncubator_);
+            eggIncubator_.AddEntriesFrom(input, _repeated_eggIncubator_codec);
             break;
           }
         }
