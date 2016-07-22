@@ -10,11 +10,11 @@ namespace PoGo_Proxy.Sample
 {
     class Program
     {
-        private static List<ResponseEventArgs> _apiLog;
+        private static List<RequestHandledEventArgs> _apiLog;
 
         static void Main()
         {
-            _apiLog = new List<ResponseEventArgs>();
+            _apiLog = new List<RequestHandledEventArgs>();
 
             Console.WriteLine("Hit any key to stop proxy..");
             Console.WriteLine();
@@ -23,7 +23,7 @@ namespace PoGo_Proxy.Sample
             {
                 Out = Console.Out
             };
-            controller.ResponseReceived += Controller_ResponseReceived;
+            controller.RequestHandled += Controller_ResponseReceived;
 
             controller.Start();
 
@@ -39,12 +39,12 @@ namespace PoGo_Proxy.Sample
                 JsonConvert.SerializeObject(_apiLog, Formatting.Indented, new StringEnumConverter()));
         }
 
-        private static void Controller_ResponseReceived(object sender, ResponseEventArgs e)
+        private static void Controller_ResponseReceived(object sender, RequestHandledEventArgs e)
         {
             // Update log
             _apiLog.Add(e);
 
-            foreach (var responsePair in e.Responses.ParsedMessages)
+            foreach (var responsePair in e.ResponseBlock.ParsedMessages)
             {
                 if (responsePair.Key == RequestType.GetInventory)
                 {

@@ -16,26 +16,21 @@ namespace PoGo_Proxy
     public sealed class ProxyController
     {
         private readonly ProxyServer _proxyServer;
-        private readonly Dictionary<ulong, ResponseEventArgs> _responseBlocks;
+        private readonly Dictionary<ulong, RequestHandledEventArgs> _apiBlocks;
 
         public string Ip { get; }
         public int Port { get; }
         public TextWriter Out { get; set; }
 
-        public event EventHandler<ResponseEventArgs> ResponseReceived;
+        public event EventHandler<RequestHandledEventArgs> RequestHandled;
 
         public ProxyController(string ipAddress, int port)
         {
             _proxyServer = new ProxyServer();
-            _responseBlocks = new Dictionary<ulong, ResponseEventArgs>();
+            _apiBlocks = new Dictionary<ulong, RequestHandledEventArgs>();
 
             Ip = ipAddress;
             Port = port;
-        }
-
-        private void OnResponseReceived(ResponseEventArgs e)
-        {
-            ResponseReceived?.Invoke(this, e);
         }
 
         public void Start()
@@ -85,11 +80,9 @@ namespace PoGo_Proxy
             var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedInputStream);
 
             // Initialize the request block
-            var requests = new MessageBlock
+            var requestBlock = new MessageBlock
             {
-                RequestId = requestEnvelope.RequestId,
                 MessageInitialized = callTime,
-                MessageBlockType = MessageBlockType.Request,
                 ParsedMessages = new Dictionary<RequestType, IMessage>()
             };
 
@@ -101,22 +94,22 @@ namespace PoGo_Proxy
                 var instance = (IMessage)Activator.CreateInstance(type);
                 instance.MergeFrom(request.RequestMessage);
 
-                requests.ParsedMessages.Add(request.RequestType, instance);
+                requestBlock.ParsedMessages.Add(request.RequestType, instance);
             }
 
             // TODO figure out why the requests are doubling up and what to do about it
-            if (_responseBlocks.ContainsKey(requestEnvelope.RequestId))
+            if (_apiBlocks.ContainsKey(requestEnvelope.RequestId))
             {
                 // If the requests are the same, no need to readd
-                if (_responseBlocks[requestEnvelope.RequestId].Requests.Equals(requests)) return;
+                if (_apiBlocks[requestEnvelope.RequestId].RequestBlock.Equals(requestBlock)) return;
 
                 if (Out != StreamWriter.Null)
                 {
                     Out.WriteLine("[*]");
                     Out.WriteLine($"[*] Request Id({requestEnvelope.RequestId}) already exists.");
 
-                    Out.WriteLine($"[*] Old request:\n{_responseBlocks[requestEnvelope.RequestId].Requests}");
-                    Out.WriteLine($"[*] New request:\n{requests}");
+                    Out.WriteLine($"[*] Old request:\n{_apiBlocks[requestEnvelope.RequestId].RequestBlock}");
+                    Out.WriteLine($"[*] New request:\n{requestBlock}");
 
                     Out.WriteLine("[*]");
                 }
@@ -124,12 +117,12 @@ namespace PoGo_Proxy
             }
 
             // Initialize a new request/response paired block and track it to update response
-            var args = new ResponseEventArgs
+            var args = new RequestHandledEventArgs
             {
                 RequestId = requestEnvelope.RequestId,
-                Requests = requests
+                RequestBlock = requestBlock
             };
-            _responseBlocks.Add(args.RequestId, args);
+            _apiBlocks.Add(args.RequestId, args);
 
             //if (Out != StreamWriter.Null) Out.WriteLine(requests);
         }
@@ -147,31 +140,29 @@ namespace PoGo_Proxy
                 var responseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedInputStream);
 
                 // Initialize the response block
-                var responses = new MessageBlock
+                var responseBlock = new MessageBlock
                 {
-                    RequestId = responseEnvelope.RequestId,
                     MessageInitialized = callTime,
-                    MessageBlockType = MessageBlockType.Response,
                     ParsedMessages = new Dictionary<RequestType, IMessage>()
                 };
 
                 // Grab the paired request
-                var args = _responseBlocks[responses.RequestId];
+                var args = _apiBlocks[responseEnvelope.RequestId];
 
                 // Check if the requests and responses match up
                 // TODO figure out why this is happening
-                if (args.Requests.ParsedMessages.Count != responseEnvelope.Returns.Count)
+                if (args.RequestBlock.ParsedMessages.Count != responseEnvelope.Returns.Count)
                 {
                     // Initial request is asking for 5 messages, but three of them are empty - so only getting back 2 responses
-                    // These messages are not null - how to deal with this
-
+                    // These messages are not null - how to deal with this..
+                    // If ther is a way to know the response type without pairing with a request, then it's simple
 
                     if (Out != StreamWriter.Null)
                     {
                         Out.WriteLine("[*]");
-                        Out.WriteLine($"[*] Request messages count ({args.Requests.ParsedMessages.Count}) is different than the response messages count ({responseEnvelope.Returns.Count}).");
+                        Out.WriteLine($"[*] Request messages count ({args.RequestBlock.ParsedMessages.Count}) is different than the response messages count ({responseEnvelope.Returns.Count}).");
 
-                        Out.WriteLine($"[*] Request:\n{args.Requests}");
+                        Out.WriteLine($"[*] Request:\n{args.RequestBlock}");
 
                         Out.WriteLine("[*]");
                     }
@@ -179,7 +170,7 @@ namespace PoGo_Proxy
                 }
 
                 // Grab request types
-                var requestTypes = args.Requests.ParsedMessages.Keys.ToList();
+                var requestTypes = args.RequestBlock.ParsedMessages.Keys.ToList();
 
                 // Parse the responses
                 for (int i = 0; i < responseEnvelope.Returns.Count; i++)
@@ -189,18 +180,18 @@ namespace PoGo_Proxy
                     var instance = (IMessage)Activator.CreateInstance(type);
                     instance.MergeFrom(responseEnvelope.Returns[i]);
 
-                    responses.ParsedMessages.Add(requestTypes[i], instance);
+                    responseBlock.ParsedMessages.Add(requestTypes[i], instance);
                 }
 
                 // TODO what scenarios would cause this
-                if (!_responseBlocks.ContainsKey(responseEnvelope.RequestId))
+                if (!_apiBlocks.ContainsKey(responseEnvelope.RequestId))
                 {
                     if (Out != StreamWriter.Null)
                     {
                         Out.WriteLine("[*]");
                         Out.WriteLine($"[*] Request doesn't exist with specified RequestId ({responseEnvelope.RequestId}).");
 
-                        Out.WriteLine($"[*] Response:\n{responses}");
+                        Out.WriteLine($"[*] Response:\n{responseBlock}");
 
                         Out.WriteLine("[*]");
                     }
@@ -208,9 +199,9 @@ namespace PoGo_Proxy
                 }
 
                 // Remove block from dictionary and invoke event handler
-                args.Responses = responses;
-                _responseBlocks.Remove(args.RequestId);
-                OnResponseReceived(args);
+                args.ResponseBlock = responseBlock;
+                _apiBlocks.Remove(args.RequestId);
+                RequestHandled?.Invoke(this, args);
 
                 //if (Out != StreamWriter.Null) Out.WriteLine(responses);
             }
