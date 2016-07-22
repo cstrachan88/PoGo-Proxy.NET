@@ -52,7 +52,7 @@ namespace PoGo_Proxy.Sample
 
                     if (inventory != null && inventory.Success)
                     {
-                        Console.WriteLine(JsonConvert.SerializeObject(inventory.InventoryDelta));
+                        Console.WriteLine(JsonConvert.SerializeObject(inventory.InventoryDelta).Substring(0,120));
                     }
                 }
             }

@@ -101,7 +101,7 @@ namespace PoGo_Proxy
             if (_apiBlocks.ContainsKey(requestEnvelope.RequestId))
             {
                 // If the requests are the same, no need to readd
-                if (_apiBlocks[requestEnvelope.RequestId].RequestBlock.Equals(requestBlock)) return;
+                if (_apiBlocks[requestEnvelope.RequestId].RequestBlock.ParsedMessages.Equals(requestBlock.ParsedMessages)) return;
 
                 if (Out != StreamWriter.Null)
                 {
