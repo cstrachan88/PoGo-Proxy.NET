@@ -107,6 +107,9 @@ namespace PoGo_Proxy
             // TODO figure out why the requests are doubling up and what to do about it
             if (_responseBlocks.ContainsKey(requestEnvelope.RequestId))
             {
+                // If the requests are the same, no need to readd
+                if (_responseBlocks[requestEnvelope.RequestId].Requests.Equals(requests)) return;
+
                 if (Out != StreamWriter.Null)
                 {
                     Out.WriteLine("[*]");
