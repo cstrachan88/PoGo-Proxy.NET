@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using POGOProtos.Networking.Requests;
@@ -40,30 +41,33 @@ namespace PoGo_Proxy.Sample
             // Update log
             _apiLog.Add(e);
 
+            // Using stringbuilder to group response blocks since messages can get overlayed due to threading
+            var sb = new StringBuilder();
+
             // Parse responses
-            Console.WriteLine("Response blocks:");
+            sb.AppendLine("[<-] Response blocks:");
             foreach (var responsePair in e.ResponseBlock.ParsedMessages)
             {
-                Console.WriteLine("  " + responsePair.Key);
+                sb.AppendLine(" [+] " + responsePair.Key);
 
                 switch (responsePair.Key)
                 {
                     case RequestType.Encounter:
-                        Console.WriteLine("    Name : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.PokemonId);
-                        Console.WriteLine("    Attack : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualAttack);
-                        Console.WriteLine("    Defense : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualDefense);
-                        Console.WriteLine("    Stamina : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualStamina);
+                        sb.AppendLine("     Name : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.PokemonId);
+                        sb.AppendLine("     Attack : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualAttack);
+                        sb.AppendLine("     Defense : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualDefense);
+                        sb.AppendLine("     Stamina : " + ((EncounterResponse)responsePair.Value).WildPokemon.PokemonData.IndividualStamina);
                         break;
 
                     case RequestType.DiskEncounter:
-                        Console.WriteLine("    Name : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.PokemonId);
-                        Console.WriteLine("    Attack : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualAttack);
-                        Console.WriteLine("    Defense : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualDefense);
-                        Console.WriteLine("    Stamina : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualStamina);
+                        sb.AppendLine("     Name : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.PokemonId);
+                        sb.AppendLine("     Attack : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualAttack);
+                        sb.AppendLine("     Defense : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualDefense);
+                        sb.AppendLine("     Stamina : " + ((DiskEncounterResponse)responsePair.Value).PokemonData.IndividualStamina);
                         break;
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine(sb.ToString());
         }
     }
 }
