@@ -13,7 +13,7 @@ namespace PoGo_Proxy
 
         public override string ToString()
         {
-            return "  Parsed Messages:\n" + JsonConvert.SerializeObject(ParsedMessages);
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

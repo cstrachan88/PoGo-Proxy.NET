@@ -166,12 +166,15 @@ namespace PoGo_Proxy
 
                     if (Out != StreamWriter.Null)
                     {
-                        Out.WriteLine("[*]");
                         Out.WriteLine($"[*] Request messages count ({args.RequestBlock.ParsedMessages.Count}) is different than the response messages count ({responseEnvelope.Returns.Count}).");
 
-                        Out.WriteLine($"[*] Request:\n{args.RequestBlock}");
+                        Out.WriteLine("Request:");
+                        Out.WriteLine(args.RequestBlock);
 
-                        Out.WriteLine("[*]");
+                        Out.WriteLine("Response:");
+                        Out.WriteLine("Not sure yet how to read this without knowing what it is.");
+
+                        Out.WriteLine($"[*]\n");
                     }
                     //throw new RankException("Request messages count is different than the response messages count.");
                 }
