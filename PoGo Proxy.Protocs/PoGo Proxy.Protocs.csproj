@@ -48,9 +48,11 @@
     <Compile Include="POGOProtosDataBattle.cs" />
     <Compile Include="POGOProtosDataCapture.cs" />
     <Compile Include="POGOProtosDataGym.cs" />
+    <Compile Include="POGOProtosDataLogs.cs" />
     <Compile Include="POGOProtosDataPlayer.cs" />
     <Compile Include="POGOProtosEnums.cs" />
     <Compile Include="POGOProtosInventory.cs" />
+    <Compile Include="POGOProtosInventoryItem.cs" />
     <Compile Include="POGOProtosMap.cs" />
     <Compile Include="POGOProtosMapFort.cs" />
     <Compile Include="POGOProtosMapPokemon.cs" />
@@ -69,7 +71,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cd $(ProjectDir)POGOProtos
+    <PreBuildEvent>cd $(ProjectDir)POGOProtos-1.0
 python compile_single.py -l csharp -o "$(ProjectDir)\"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

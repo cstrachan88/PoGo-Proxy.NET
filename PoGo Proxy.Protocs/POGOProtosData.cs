@@ -24,48 +24,50 @@ namespace POGOProtos.Data {
           string.Concat(
             "ChVQT0dPUHJvdG9zLkRhdGEucHJvdG8SD1BPR09Qcm90b3MuRGF0YRoWUE9H",
             "T1Byb3Rvcy5FbnVtcy5wcm90bxocUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5w",
-            "cm90byJ3ChBBc3NldERpZ2VzdEVudHJ5EhAKCGFzc2V0X2lkGAEgASgJEhMK",
-            "C2J1bmRsZV9uYW1lGAIgASgJEg8KB3ZlcnNpb24YAyABKAMSEAoIY2hlY2tz",
-            "dW0YBCABKA0SDAoEc2l6ZRgFIAEoBRILCgNrZXkYBiABKAwiUQoQRG93bmxv",
-            "YWRVcmxFbnRyeRIQCghhc3NldF9pZBgBIAEoCRILCgN1cmwYAiABKAkSDAoE",
-            "c2l6ZRgDIAEoBRIQCghjaGVja3N1bRgEIAEoDSKLAQoLUGxheWVyQmFkZ2US",
-            "LwoKYmFkZ2VfdHlwZRgBIAEoDjIbLlBPR09Qcm90b3MuRW51bXMuQmFkZ2VU",
-            "eXBlEgwKBHJhbmsYAiABKAUSEwoLc3RhcnRfdmFsdWUYAyABKAUSEQoJZW5k",
-            "X3ZhbHVlGAQgASgFEhUKDWN1cnJlbnRfdmFsdWUYBSABKAEi4gMKClBsYXll",
-            "ckRhdGESHQoVY3JlYXRpb25fdGltZXN0YW1wX21zGAEgASgDEhAKCHVzZXJu",
-            "YW1lGAIgASgJEgwKBHRlYW0YBSABKAUSNwoOdHV0b3JpYWxfc3RhdGUYByAD",
-            "KA4yHy5QT0dPUHJvdG9zLkVudW1zLlR1dG9yaWFsU3RhdGUSNAoGYXZhdGFy",
-            "GAggASgLMiQuUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5QbGF5ZXJBdmF0YXIS",
-            "GwoTbWF4X3Bva2Vtb25fc3RvcmFnZRgJIAEoBRIYChBtYXhfaXRlbV9zdG9y",
-            "YWdlGAogASgFEjcKC2RhaWx5X2JvbnVzGAsgASgLMiIuUE9HT1Byb3Rvcy5E",
-            "YXRhLlBsYXllci5EYWlseUJvbnVzEj0KDmVxdWlwcGVkX2JhZGdlGAwgASgL",
-            "MiUuUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5FcXVpcHBlZEJhZGdlEkEKEGNv",
-            "bnRhY3Rfc2V0dGluZ3MYDSABKAsyJy5QT0dPUHJvdG9zLkRhdGEuUGxheWVy",
-            "LkNvbnRhY3RTZXR0aW5ncxI0CgpjdXJyZW5jaWVzGA4gAygLMiAuUE9HT1By",
-            "b3Rvcy5EYXRhLlBsYXllci5DdXJyZW5jeSKsAQoMUG9rZWRleEVudHJ5Ei8K",
-            "CnBva2Vtb25faWQYASABKA4yGy5QT0dPUHJvdG9zLkVudW1zLlBva2Vtb25J",
-            "ZBIZChF0aW1lc19lbmNvdW50ZXJlZBgCIAEoBRIWCg50aW1lc19jYXB0dXJl",
-            "ZBgDIAEoBRIeChZldm9sdXRpb25fc3RvbmVfcGllY2VzGAQgASgFEhgKEGV2",
-            "b2x1dGlvbl9zdG9uZXMYBSABKAUi9QUKC1Bva2Vtb25EYXRhEgoKAmlkGAEg",
-            "ASgGEi8KCnBva2Vtb25faWQYAiABKA4yGy5QT0dPUHJvdG9zLkVudW1zLlBv",
-            "a2Vtb25JZBIKCgJjcBgDIAEoBRIPCgdzdGFtaW5hGAQgASgFEhMKC3N0YW1p",
-            "bmFfbWF4GAUgASgFEi0KBm1vdmVfMRgGIAEoDjIdLlBPR09Qcm90b3MuRW51",
-            "bXMuUG9rZW1vbk1vdmUSLQoGbW92ZV8yGAcgASgOMh0uUE9HT1Byb3Rvcy5F",
-            "bnVtcy5Qb2tlbW9uTW92ZRIYChBkZXBsb3llZF9mb3J0X2lkGAggASgFEhIK",
-            "Cm93bmVyX25hbWUYCSABKAkSDgoGaXNfZWdnGAogASgIEhwKFGVnZ19rbV93",
-            "YWxrZWRfdGFyZ2V0GAsgASgBEhsKE2VnZ19rbV93YWxrZWRfc3RhcnQYDCAB",
-            "KAESDgoGb3JpZ2luGA4gASgFEhAKCGhlaWdodF9tGA8gASgCEhEKCXdlaWdo",
-            "dF9rZxgQIAEoAhIZChFpbmRpdmlkdWFsX2F0dGFjaxgRIAEoBRIaChJpbmRp",
-            "dmlkdWFsX2RlZmVuc2UYEiABKAUSGgoSaW5kaXZpZHVhbF9zdGFtaW5hGBMg",
-            "ASgFEhUKDWNwX211bHRpcGxpZXIYFCABKAISEAoIcG9rZWJhbGwYFSABKAUS",
-            "GAoQY2FwdHVyZWRfY2VsbF9pZBgWIAEoBBIYChBiYXR0bGVzX2F0dGFja2Vk",
-            "GBcgASgFEhgKEGJhdHRsZXNfZGVmZW5kZWQYGCABKAUSGAoQZWdnX2luY3Vi",
-            "YXRvcl9pZBgZIAEoCRIYChBjcmVhdGlvbl90aW1lX21zGBogASgEEhQKDG51",
-            "bV91cGdyYWRlcxgbIAEoBRIgChhhZGRpdGlvbmFsX2NwX211bHRpcGxpZXIY",
-            "HCABKAUSEAoIZmF2b3JpdGUYHSABKAUSEAoIbmlja25hbWUYHiABKAkSEQoJ",
-            "ZnJvbV9mb3J0GB8gASgFUABQAWIGcHJvdG8z"));
+            "cm90bxofUE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbS5wcm90byJ3ChBBc3Nl",
+            "dERpZ2VzdEVudHJ5EhAKCGFzc2V0X2lkGAEgASgJEhMKC2J1bmRsZV9uYW1l",
+            "GAIgASgJEg8KB3ZlcnNpb24YAyABKAMSEAoIY2hlY2tzdW0YBCABKA0SDAoE",
+            "c2l6ZRgFIAEoBRILCgNrZXkYBiABKAwiUQoQRG93bmxvYWRVcmxFbnRyeRIQ",
+            "Cghhc3NldF9pZBgBIAEoCRILCgN1cmwYAiABKAkSDAoEc2l6ZRgDIAEoBRIQ",
+            "CghjaGVja3N1bRgEIAEoDSKLAQoLUGxheWVyQmFkZ2USLwoKYmFkZ2VfdHlw",
+            "ZRgBIAEoDjIbLlBPR09Qcm90b3MuRW51bXMuQmFkZ2VUeXBlEgwKBHJhbmsY",
+            "AiABKAUSEwoLc3RhcnRfdmFsdWUYAyABKAUSEQoJZW5kX3ZhbHVlGAQgASgF",
+            "EhUKDWN1cnJlbnRfdmFsdWUYBSABKAEigwQKClBsYXllckRhdGESHQoVY3Jl",
+            "YXRpb25fdGltZXN0YW1wX21zGAEgASgDEhAKCHVzZXJuYW1lGAIgASgJEikK",
+            "BHRlYW0YBSABKA4yGy5QT0dPUHJvdG9zLkVudW1zLlRlYW1Db2xvchI7Cg50",
+            "dXRvcmlhbF9zdGF0ZRgHIAMoDjIfLlBPR09Qcm90b3MuRW51bXMuVHV0b3Jp",
+            "YWxTdGF0ZUICEAESNAoGYXZhdGFyGAggASgLMiQuUE9HT1Byb3Rvcy5EYXRh",
+            "LlBsYXllci5QbGF5ZXJBdmF0YXISGwoTbWF4X3Bva2Vtb25fc3RvcmFnZRgJ",
+            "IAEoBRIYChBtYXhfaXRlbV9zdG9yYWdlGAogASgFEjcKC2RhaWx5X2JvbnVz",
+            "GAsgASgLMiIuUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5EYWlseUJvbnVzEj0K",
+            "DmVxdWlwcGVkX2JhZGdlGAwgASgLMiUuUE9HT1Byb3Rvcy5EYXRhLlBsYXll",
+            "ci5FcXVpcHBlZEJhZGdlEkEKEGNvbnRhY3Rfc2V0dGluZ3MYDSABKAsyJy5Q",
+            "T0dPUHJvdG9zLkRhdGEuUGxheWVyLkNvbnRhY3RTZXR0aW5ncxI0CgpjdXJy",
+            "ZW5jaWVzGA4gAygLMiAuUE9HT1Byb3Rvcy5EYXRhLlBsYXllci5DdXJyZW5j",
+            "eSKsAQoMUG9rZWRleEVudHJ5Ei8KCnBva2Vtb25faWQYASABKA4yGy5QT0dP",
+            "UHJvdG9zLkVudW1zLlBva2Vtb25JZBIZChF0aW1lc19lbmNvdW50ZXJlZBgC",
+            "IAEoBRIWCg50aW1lc19jYXB0dXJlZBgDIAEoBRIeChZldm9sdXRpb25fc3Rv",
+            "bmVfcGllY2VzGAQgASgFEhgKEGV2b2x1dGlvbl9zdG9uZXMYBSABKAUimAYK",
+            "C1Bva2Vtb25EYXRhEgoKAmlkGAEgASgGEi8KCnBva2Vtb25faWQYAiABKA4y",
+            "Gy5QT0dPUHJvdG9zLkVudW1zLlBva2Vtb25JZBIKCgJjcBgDIAEoBRIPCgdz",
+            "dGFtaW5hGAQgASgFEhMKC3N0YW1pbmFfbWF4GAUgASgFEi0KBm1vdmVfMRgG",
+            "IAEoDjIdLlBPR09Qcm90b3MuRW51bXMuUG9rZW1vbk1vdmUSLQoGbW92ZV8y",
+            "GAcgASgOMh0uUE9HT1Byb3Rvcy5FbnVtcy5Qb2tlbW9uTW92ZRIYChBkZXBs",
+            "b3llZF9mb3J0X2lkGAggASgJEhIKCm93bmVyX25hbWUYCSABKAkSDgoGaXNf",
+            "ZWdnGAogASgIEhwKFGVnZ19rbV93YWxrZWRfdGFyZ2V0GAsgASgBEhsKE2Vn",
+            "Z19rbV93YWxrZWRfc3RhcnQYDCABKAESDgoGb3JpZ2luGA4gASgFEhAKCGhl",
+            "aWdodF9tGA8gASgCEhEKCXdlaWdodF9rZxgQIAEoAhIZChFpbmRpdmlkdWFs",
+            "X2F0dGFjaxgRIAEoBRIaChJpbmRpdmlkdWFsX2RlZmVuc2UYEiABKAUSGgoS",
+            "aW5kaXZpZHVhbF9zdGFtaW5hGBMgASgFEhUKDWNwX211bHRpcGxpZXIYFCAB",
+            "KAISMwoIcG9rZWJhbGwYFSABKA4yIS5QT0dPUHJvdG9zLkludmVudG9yeS5J",
+            "dGVtLkl0ZW1JZBIYChBjYXB0dXJlZF9jZWxsX2lkGBYgASgEEhgKEGJhdHRs",
+            "ZXNfYXR0YWNrZWQYFyABKAUSGAoQYmF0dGxlc19kZWZlbmRlZBgYIAEoBRIY",
+            "ChBlZ2dfaW5jdWJhdG9yX2lkGBkgASgJEhgKEGNyZWF0aW9uX3RpbWVfbXMY",
+            "GiABKAQSFAoMbnVtX3VwZ3JhZGVzGBsgASgFEiAKGGFkZGl0aW9uYWxfY3Bf",
+            "bXVsdGlwbGllchgcIAEoAhIQCghmYXZvcml0ZRgdIAEoBRIQCghuaWNrbmFt",
+            "ZRgeIAEoCRIRCglmcm9tX2ZvcnQYHyABKAVQAFABUAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::POGOProtos.Enums.POGOProtosEnumsReflection.Descriptor, global::POGOProtos.Data.Player.POGOProtosDataPlayerReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::POGOProtos.Enums.POGOProtosEnumsReflection.Descriptor, global::POGOProtos.Data.Player.POGOProtosDataPlayerReflection.Descriptor, global::POGOProtos.Inventory.Item.POGOProtosInventoryItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.AssetDigestEntry), global::POGOProtos.Data.AssetDigestEntry.Parser, new[]{ "AssetId", "BundleName", "Version", "Checksum", "Size", "Key" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Data.DownloadUrlEntry), global::POGOProtos.Data.DownloadUrlEntry.Parser, new[]{ "AssetId", "Url", "Size", "Checksum" }, null, null, null),
@@ -832,9 +834,9 @@ namespace POGOProtos.Data {
 
     /// <summary>Field number for the "team" field.</summary>
     public const int TeamFieldNumber = 5;
-    private int team_;
+    private global::POGOProtos.Enums.TeamColor team_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Team {
+    public global::POGOProtos.Enums.TeamColor Team {
       get { return team_; }
       set {
         team_ = value;
@@ -988,7 +990,7 @@ namespace POGOProtos.Data {
       }
       if (Team != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(Team);
+        output.WriteEnum((int) Team);
       }
       tutorialState_.WriteTo(output, _repeated_tutorialState_codec);
       if (avatar_ != null) {
@@ -1028,7 +1030,7 @@ namespace POGOProtos.Data {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
       }
       if (Team != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Team);
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Team);
       }
       size += tutorialState_.CalculateSize(_repeated_tutorialState_codec);
       if (avatar_ != null) {
@@ -1118,7 +1120,7 @@ namespace POGOProtos.Data {
             break;
           }
           case 40: {
-            Team = input.ReadInt32();
+            team_ = (global::POGOProtos.Enums.TeamColor) input.ReadEnum();
             break;
           }
           case 58:
@@ -1541,12 +1543,12 @@ namespace POGOProtos.Data {
 
     /// <summary>Field number for the "deployed_fort_id" field.</summary>
     public const int DeployedFortIdFieldNumber = 8;
-    private int deployedFortId_;
+    private string deployedFortId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int DeployedFortId {
+    public string DeployedFortId {
       get { return deployedFortId_; }
       set {
-        deployedFortId_ = value;
+        deployedFortId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1673,9 +1675,9 @@ namespace POGOProtos.Data {
 
     /// <summary>Field number for the "pokeball" field.</summary>
     public const int PokeballFieldNumber = 21;
-    private int pokeball_;
+    private global::POGOProtos.Inventory.Item.ItemId pokeball_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Pokeball {
+    public global::POGOProtos.Inventory.Item.ItemId Pokeball {
       get { return pokeball_; }
       set {
         pokeball_ = value;
@@ -1750,9 +1752,9 @@ namespace POGOProtos.Data {
 
     /// <summary>Field number for the "additional_cp_multiplier" field.</summary>
     public const int AdditionalCpMultiplierFieldNumber = 28;
-    private int additionalCpMultiplier_;
+    private float additionalCpMultiplier_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int AdditionalCpMultiplier {
+    public float AdditionalCpMultiplier {
       get { return additionalCpMultiplier_; }
       set {
         additionalCpMultiplier_ = value;
@@ -1848,7 +1850,7 @@ namespace POGOProtos.Data {
       if (StaminaMax != 0) hash ^= StaminaMax.GetHashCode();
       if (Move1 != 0) hash ^= Move1.GetHashCode();
       if (Move2 != 0) hash ^= Move2.GetHashCode();
-      if (DeployedFortId != 0) hash ^= DeployedFortId.GetHashCode();
+      if (DeployedFortId.Length != 0) hash ^= DeployedFortId.GetHashCode();
       if (OwnerName.Length != 0) hash ^= OwnerName.GetHashCode();
       if (IsEgg != false) hash ^= IsEgg.GetHashCode();
       if (EggKmWalkedTarget != 0D) hash ^= EggKmWalkedTarget.GetHashCode();
@@ -1867,7 +1869,7 @@ namespace POGOProtos.Data {
       if (EggIncubatorId.Length != 0) hash ^= EggIncubatorId.GetHashCode();
       if (CreationTimeMs != 0UL) hash ^= CreationTimeMs.GetHashCode();
       if (NumUpgrades != 0) hash ^= NumUpgrades.GetHashCode();
-      if (AdditionalCpMultiplier != 0) hash ^= AdditionalCpMultiplier.GetHashCode();
+      if (AdditionalCpMultiplier != 0F) hash ^= AdditionalCpMultiplier.GetHashCode();
       if (Favorite != 0) hash ^= Favorite.GetHashCode();
       if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
       if (FromFort != 0) hash ^= FromFort.GetHashCode();
@@ -1909,9 +1911,9 @@ namespace POGOProtos.Data {
         output.WriteRawTag(56);
         output.WriteEnum((int) Move2);
       }
-      if (DeployedFortId != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(DeployedFortId);
+      if (DeployedFortId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(DeployedFortId);
       }
       if (OwnerName.Length != 0) {
         output.WriteRawTag(74);
@@ -1959,7 +1961,7 @@ namespace POGOProtos.Data {
       }
       if (Pokeball != 0) {
         output.WriteRawTag(168, 1);
-        output.WriteInt32(Pokeball);
+        output.WriteEnum((int) Pokeball);
       }
       if (CapturedCellId != 0UL) {
         output.WriteRawTag(176, 1);
@@ -1985,9 +1987,9 @@ namespace POGOProtos.Data {
         output.WriteRawTag(216, 1);
         output.WriteInt32(NumUpgrades);
       }
-      if (AdditionalCpMultiplier != 0) {
-        output.WriteRawTag(224, 1);
-        output.WriteInt32(AdditionalCpMultiplier);
+      if (AdditionalCpMultiplier != 0F) {
+        output.WriteRawTag(229, 1);
+        output.WriteFloat(AdditionalCpMultiplier);
       }
       if (Favorite != 0) {
         output.WriteRawTag(232, 1);
@@ -2027,8 +2029,8 @@ namespace POGOProtos.Data {
       if (Move2 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Move2);
       }
-      if (DeployedFortId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DeployedFortId);
+      if (DeployedFortId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeployedFortId);
       }
       if (OwnerName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OwnerName);
@@ -2064,7 +2066,7 @@ namespace POGOProtos.Data {
         size += 2 + 4;
       }
       if (Pokeball != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Pokeball);
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Pokeball);
       }
       if (CapturedCellId != 0UL) {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(CapturedCellId);
@@ -2084,8 +2086,8 @@ namespace POGOProtos.Data {
       if (NumUpgrades != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(NumUpgrades);
       }
-      if (AdditionalCpMultiplier != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AdditionalCpMultiplier);
+      if (AdditionalCpMultiplier != 0F) {
+        size += 2 + 4;
       }
       if (Favorite != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Favorite);
@@ -2125,7 +2127,7 @@ namespace POGOProtos.Data {
       if (other.Move2 != 0) {
         Move2 = other.Move2;
       }
-      if (other.DeployedFortId != 0) {
+      if (other.DeployedFortId.Length != 0) {
         DeployedFortId = other.DeployedFortId;
       }
       if (other.OwnerName.Length != 0) {
@@ -2182,7 +2184,7 @@ namespace POGOProtos.Data {
       if (other.NumUpgrades != 0) {
         NumUpgrades = other.NumUpgrades;
       }
-      if (other.AdditionalCpMultiplier != 0) {
+      if (other.AdditionalCpMultiplier != 0F) {
         AdditionalCpMultiplier = other.AdditionalCpMultiplier;
       }
       if (other.Favorite != 0) {
@@ -2232,8 +2234,8 @@ namespace POGOProtos.Data {
             move2_ = (global::POGOProtos.Enums.PokemonMove) input.ReadEnum();
             break;
           }
-          case 64: {
-            DeployedFortId = input.ReadInt32();
+          case 66: {
+            DeployedFortId = input.ReadString();
             break;
           }
           case 74: {
@@ -2281,7 +2283,7 @@ namespace POGOProtos.Data {
             break;
           }
           case 168: {
-            Pokeball = input.ReadInt32();
+            pokeball_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 176: {
@@ -2308,8 +2310,8 @@ namespace POGOProtos.Data {
             NumUpgrades = input.ReadInt32();
             break;
           }
-          case 224: {
-            AdditionalCpMultiplier = input.ReadInt32();
+          case 229: {
+            AdditionalCpMultiplier = input.ReadFloat();
             break;
           }
           case 232: {

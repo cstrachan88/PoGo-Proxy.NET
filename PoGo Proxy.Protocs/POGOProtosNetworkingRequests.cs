@@ -328,7 +328,7 @@ namespace POGOProtos.Networking.Requests {
     /// </summary>
     [pbr::OriginalName("SFIDA_REGISTRATION")] SfidaRegistration = 800,
     /// <summary>
-    ///  Not yet released.
+    ///  Implemented [R &amp; M]
     /// </summary>
     [pbr::OriginalName("SFIDA_ACTION_LOG")] SfidaActionLog = 801,
     /// <summary>

@@ -23,113 +23,115 @@ namespace POGOProtos.Networking.Requests.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1QT0dPUHJvdG9zLk5ldHdvcmtpbmcuUmVxdWVzdHMuTWVzc2FnZXMucHJv",
-            "dG8SJ1BPR09Qcm90b3MuTmV0d29ya2luZy5SZXF1ZXN0cy5NZXNzYWdlcxoa",
-            "UE9HT1Byb3Rvcy5JbnZlbnRvcnkucHJvdG8aHFBPR09Qcm90b3MuRGF0YS5C",
-            "YXR0bGUucHJvdG8aFlBPR09Qcm90b3MuRW51bXMucHJvdG8aHFBPR09Qcm90",
-            "b3MuRGF0YS5QbGF5ZXIucHJvdG8ikQEKFkFkZEZvcnRNb2RpZmllck1lc3Nh",
-            "Z2USMwoNbW9kaWZpZXJfdHlwZRgBIAEoDjIcLlBPR09Qcm90b3MuSW52ZW50",
-            "b3J5Lkl0ZW1JZBIPCgdmb3J0X2lkGAIgASgJEhcKD3BsYXllcl9sYXRpdHVk",
-            "ZRgDIAEoARIYChBwbGF5ZXJfbG9uZ2l0dWRlGAQgASgBIuwBChBBdHRhY2tH",
-            "eW1NZXNzYWdlEg4KBmd5bV9pZBgBIAEoCRIRCgliYXR0bGVfaWQYAiABKAkS",
-            "PAoOYXR0YWNrX2FjdGlvbnMYAyADKAsyJC5QT0dPUHJvdG9zLkRhdGEuQmF0",
-            "dGxlLkJhdHRsZUFjdGlvbhJEChZsYXN0X3JldHJpZXZlZF9hY3Rpb25zGAQg",
-            "ASgLMiQuUE9HT1Byb3Rvcy5EYXRhLkJhdHRsZS5CYXR0bGVBY3Rpb24SFwoP",
-            "cGxheWVyX2xhdGl0dWRlGAUgASgBEhgKEHBsYXllcl9sb25naXR1ZGUYBiAB",
-            "KAEixQEKE0NhdGNoUG9rZW1vbk1lc3NhZ2USFAoMZW5jb3VudGVyX2lkGAEg",
-            "ASgGEhAKCHBva2ViYWxsGAIgASgFEh8KF25vcm1hbGl6ZWRfcmV0aWNsZV9z",
-            "aXplGAMgASgBEhgKEHNwYXduX3BvaW50X2d1aWQYBCABKAkSEwoLaGl0X3Bv",
-            "a2Vtb24YBSABKAgSFQoNc3Bpbl9tb2RpZmllchgGIAEoARIfChdub3JtYWxp",
-            "emVkX2hpdF9wb3NpdGlvbhgHIAEoASIbChlDaGVja0F3YXJkZWRCYWRnZXNN",
-            "ZXNzYWdlIjEKHUNoZWNrQ29kZW5hbWVBdmFpbGFibGVNZXNzYWdlEhAKCGNv",
-            "ZGVuYW1lGAEgASgJIigKFENsYWltQ29kZW5hbWVNZXNzYWdlEhAKCGNvZGVu",
-            "YW1lGAEgASgJIhoKGENvbGxlY3REYWlseUJvbnVzTWVzc2FnZSIiCiBDb2xs",
-            "ZWN0RGFpbHlEZWZlbmRlckJvbnVzTWVzc2FnZSJwChREaXNrRW5jb3VudGVy",
-            "TWVzc2FnZRIUCgxlbmNvdW50ZXJfaWQYASABKAQSDwoHZm9ydF9pZBgCIAEo",
-            "CRIXCg9wbGF5ZXJfbGF0aXR1ZGUYAyABKAESGAoQcGxheWVyX2xvbmdpdHVk",
-            "ZRgEIAEoASIeChxEb3dubG9hZEl0ZW1UZW1wbGF0ZXNNZXNzYWdlIqoBCiJE",
-            "b3dubG9hZFJlbW90ZUNvbmZpZ1ZlcnNpb25NZXNzYWdlEiwKCHBsYXRmb3Jt",
-            "GAEgASgOMhouUE9HT1Byb3Rvcy5FbnVtcy5QbGF0Zm9ybRIbChNkZXZpY2Vf",
-            "bWFudWZhY3R1cmVyGAIgASgJEhQKDGRldmljZV9tb2RlbBgDIAEoCRIOCgZs",
-            "b2NhbGUYBCABKAkSEwoLYXBwX3ZlcnNpb24YBSABKA0iJwoXRG93bmxvYWRT",
-            "ZXR0aW5nc01lc3NhZ2USDAoEaGFzaBgBIAEoCSINCgtFY2hvTWVzc2FnZSJz",
-            "ChBFbmNvdW50ZXJNZXNzYWdlEhQKDGVuY291bnRlcl9pZBgBIAEoBhIWCg5z",
-            "cGF3bl9wb2ludF9pZBgCIAEoCRIXCg9wbGF5ZXJfbGF0aXR1ZGUYAyABKAES",
-            "GAoQcGxheWVyX2xvbmdpdHVkZRgEIAEoASJTCiBFbmNvdW50ZXJUdXRvcmlh",
-            "bENvbXBsZXRlTWVzc2FnZRIvCgpwb2tlbW9uX2lkGAEgASgOMhsuUE9HT1By",
-            "b3Rvcy5FbnVtcy5Qb2tlbW9uSWQiRAoRRXF1aXBCYWRnZU1lc3NhZ2USLwoK",
-            "YmFkZ2VfdHlwZRgBIAEoDjIbLlBPR09Qcm90b3MuRW51bXMuQmFkZ2VUeXBl",
-            "IioKFEV2b2x2ZVBva2Vtb25NZXNzYWdlEhIKCnBva2Vtb25faWQYASABKAYi",
-            "cgoYRm9ydERlcGxveVBva2Vtb25NZXNzYWdlEg8KB2ZvcnRfaWQYASABKAkS",
-            "EgoKcG9rZW1vbl9pZBgCIAEoBBIXCg9wbGF5ZXJfbGF0aXR1ZGUYAyABKAES",
-            "GAoQcGxheWVyX2xvbmdpdHVkZRgEIAEoASJKChJGb3J0RGV0YWlsc01lc3Nh",
-            "Z2USDwoHZm9ydF9pZBgBIAEoCRIQCghsYXRpdHVkZRgCIAEoARIRCglsb25n",
-            "aXR1ZGUYAyABKAEicgoYRm9ydFJlY2FsbFBva2Vtb25NZXNzYWdlEg8KB2Zv",
-            "cnRfaWQYASABKAkSEgoKcG9rZW1vbl9pZBgCIAEoBBIXCg9wbGF5ZXJfbGF0",
-            "aXR1ZGUYAyABKAESGAoQcGxheWVyX2xvbmdpdHVkZRgEIAEoASKGAQoRRm9y",
-            "dFNlYXJjaE1lc3NhZ2USDwoHZm9ydF9pZBgBIAEoCRIXCg9wbGF5ZXJfbGF0",
-            "aXR1ZGUYAiABKAESGAoQcGxheWVyX2xvbmdpdHVkZRgDIAEoARIVCg1mb3J0",
-            "X2xhdGl0dWRlGAQgASgBEhYKDmZvcnRfbG9uZ2l0dWRlGAUgASgBIp0BChVH",
-            "ZXRBc3NldERpZ2VzdE1lc3NhZ2USLAoIcGxhdGZvcm0YASABKA4yGi5QT0dP",
-            "UHJvdG9zLkVudW1zLlBsYXRmb3JtEhsKE2RldmljZV9tYW51ZmFjdHVyZXIY",
-            "AiABKAkSFAoMZGV2aWNlX21vZGVsGAMgASgJEg4KBmxvY2FsZRgEIAEoCRIT",
-            "CgthcHBfdmVyc2lvbhgFIAEoDSIqChZHZXREb3dubG9hZFVybHNNZXNzYWdl",
-            "EhAKCGFzc2V0X2lkGAEgAygJIoYBChRHZXRHeW1EZXRhaWxzTWVzc2FnZRIO",
-            "CgZneW1faWQYASABKAkSFwoPcGxheWVyX2xhdGl0dWRlGAIgASgBEhgKEHBs",
-            "YXllcl9sb25naXR1ZGUYAyABKAESFAoMZ3ltX2xhdGl0dWRlGAQgASgBEhUK",
-            "DWd5bV9sb25naXR1ZGUYBSABKAEiFwoVR2V0SGF0Y2hlZEVnZ3NNZXNzYWdl",
-            "Ik0KGEdldEluY2Vuc2VQb2tlbW9uTWVzc2FnZRIXCg9wbGF5ZXJfbGF0aXR1",
-            "ZGUYASABKAESGAoQcGxheWVyX2xvbmdpdHVkZRgCIAEoASJIChNHZXRJbnZl",
-            "bnRvcnlNZXNzYWdlEhkKEWxhc3RfdGltZXN0YW1wX21zGAEgASgDEhYKDml0",
-            "ZW1fYmVlbl9zZWVuGAIgASgFInAKFEdldE1hcE9iamVjdHNNZXNzYWdlEhMK",
-            "B2NlbGxfaWQYASADKARCAhABEh4KEnNpbmNlX3RpbWVzdGFtcF9tcxgCIAMo",
-            "A0ICEAESEAoIbGF0aXR1ZGUYAyABKAESEQoJbG9uZ2l0dWRlGAQgASgBIhIK",
-            "EEdldFBsYXllck1lc3NhZ2UiLgoXR2V0UGxheWVyUHJvZmlsZU1lc3NhZ2US",
-            "EwoLcGxheWVyX25hbWUYASABKAkiHgocR2V0U3VnZ2VzdGVkQ29kZW5hbWVz",
-            "TWVzc2FnZSJLChdJbmNlbnNlRW5jb3VudGVyTWVzc2FnZRIUCgxlbmNvdW50",
-            "ZXJfaWQYASABKAMSGgoSZW5jb3VudGVyX2xvY2F0aW9uGAIgASgJIiYKFUxl",
-            "dmVsVXBSZXdhcmRzTWVzc2FnZRINCgVsZXZlbBgBIAEoBSKbAQobTWFya1R1",
-            "dG9yaWFsQ29tcGxldGVNZXNzYWdlEjwKE3R1dG9yaWFsc19jb21wbGV0ZWQY",
-            "ASADKA4yHy5QT0dPUHJvdG9zLkVudW1zLlR1dG9yaWFsU3RhdGUSHQoVc2Vu",
-            "ZF9tYXJrZXRpbmdfZW1haWxzGAIgASgIEh8KF3NlbmRfcHVzaF9ub3RpZmlj",
-            "YXRpb25zGAMgASgIIj4KFk5pY2tuYW1lUG9rZW1vbk1lc3NhZ2USEgoKcG9r",
-            "ZW1vbl9pZBgBIAEoBBIQCghuaWNrbmFtZRgCIAEoCSI6ChNQbGF5ZXJVcGRh",
-            "dGVNZXNzYWdlEhAKCGxhdGl0dWRlGAEgASgBEhEKCWxvbmdpdHVkZRgCIAEo",
-            "ASJbChtSZWN5Y2xlSW52ZW50b3J5SXRlbU1lc3NhZ2USLQoHaXRlbV9pZBgB",
-            "IAEoDjIcLlBPR09Qcm90b3MuSW52ZW50b3J5Lkl0ZW1JZBINCgVjb3VudBgC",
-            "IAEoBSIrChVSZWxlYXNlUG9rZW1vbk1lc3NhZ2USEgoKcG9rZW1vbl9pZBgB",
-            "IAEoBiJPChBTZXRBdmF0YXJNZXNzYWdlEjsKDXBsYXllcl9hdmF0YXIYAiAB",
-            "KAsyJC5QT0dPUHJvdG9zLkRhdGEuUGxheWVyLlBsYXllckF2YXRhciJeChlT",
-            "ZXRDb250YWN0U2V0dGluZ3NNZXNzYWdlEkEKEGNvbnRhY3Rfc2V0dGluZ3MY",
-            "ASABKAsyJy5QT0dPUHJvdG9zLkRhdGEuUGxheWVyLkNvbnRhY3RTZXR0aW5n",
-            "cyJEChlTZXRGYXZvcml0ZVBva2Vtb25NZXNzYWdlEhIKCnBva2Vtb25faWQY",
-            "ASABKAQSEwoLaXNfZmF2b3JpdGUYAiABKAgiQQoUU2V0UGxheWVyVGVhbU1l",
-            "c3NhZ2USKQoEdGVhbRgBIAEoDjIbLlBPR09Qcm90b3MuRW51bXMuVGVhbUNv",
-            "bG9yIpcBChVTdGFydEd5bUJhdHRsZU1lc3NhZ2USDgoGZ3ltX2lkGAEgASgJ",
-            "Eh0KFWF0dGFja2luZ19wb2tlbW9uX2lkcxgCIAMoBhIcChRkZWZlbmRpbmdf",
-            "cG9rZW1vbl9pZBgDIAEoBBIXCg9wbGF5ZXJfbGF0aXR1ZGUYBCABKAESGAoQ",
-            "cGxheWVyX2xvbmdpdHVkZRgFIAEoASIrChVVcGdyYWRlUG9rZW1vbk1lc3Nh",
-            "Z2USEgoKcG9rZW1vbl9pZBgBIAEoBCJHChFVc2VJbmNlbnNlTWVzc2FnZRIy",
-            "CgxpbmNlbnNlX3R5cGUYASABKA4yHC5QT0dPUHJvdG9zLkludmVudG9yeS5J",
-            "dGVtSWQidgoVVXNlSXRlbUNhcHR1cmVNZXNzYWdlEi0KB2l0ZW1faWQYASAB",
-            "KA4yHC5QT0dPUHJvdG9zLkludmVudG9yeS5JdGVtSWQSFAoMZW5jb3VudGVy",
-            "X2lkGAIgASgGEhgKEHNwYXduX3BvaW50X2d1aWQYAyABKAkiQQoaVXNlSXRl",
-            "bUVnZ0luY3ViYXRvck1lc3NhZ2USDwoHaXRlbV9pZBgBIAEoCRISCgpwb2tl",
-            "bW9uX2lkGAIgASgEIoUBChFVc2VJdGVtR3ltTWVzc2FnZRItCgdpdGVtX2lk",
-            "GAEgASgOMhwuUE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbUlkEg4KBmd5bV9p",
-            "ZBgCIAEoCRIXCg9wbGF5ZXJfbGF0aXR1ZGUYAyABKAESGAoQcGxheWVyX2xv",
-            "bmdpdHVkZRgEIAEoASJZChRVc2VJdGVtUG90aW9uTWVzc2FnZRItCgdpdGVt",
-            "X2lkGAEgASgOMhwuUE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbUlkEhIKCnBv",
-            "a2Vtb25faWQYAiABKAQiWQoUVXNlSXRlbVJldml2ZU1lc3NhZ2USLQoHaXRl",
-            "bV9pZBgBIAEoDjIcLlBPR09Qcm90b3MuSW52ZW50b3J5Lkl0ZW1JZBISCgpw",
-            "b2tlbW9uX2lkGAIgASgEIkYKFVVzZUl0ZW1YcEJvb3N0TWVzc2FnZRItCgdp",
-            "dGVtX2lkGAEgASgOMhwuUE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbUlkUABQ",
-            "AVACUANiBnByb3RvMw=="));
+            "dG8SJ1BPR09Qcm90b3MuTmV0d29ya2luZy5SZXF1ZXN0cy5NZXNzYWdlcxof",
+            "UE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbS5wcm90bxocUE9HT1Byb3Rvcy5E",
+            "YXRhLkJhdHRsZS5wcm90bxoWUE9HT1Byb3Rvcy5FbnVtcy5wcm90bxocUE9H",
+            "T1Byb3Rvcy5EYXRhLlBsYXllci5wcm90byKWAQoWQWRkRm9ydE1vZGlmaWVy",
+            "TWVzc2FnZRI4Cg1tb2RpZmllcl90eXBlGAEgASgOMiEuUE9HT1Byb3Rvcy5J",
+            "bnZlbnRvcnkuSXRlbS5JdGVtSWQSDwoHZm9ydF9pZBgCIAEoCRIXCg9wbGF5",
+            "ZXJfbGF0aXR1ZGUYAyABKAESGAoQcGxheWVyX2xvbmdpdHVkZRgEIAEoASLs",
+            "AQoQQXR0YWNrR3ltTWVzc2FnZRIOCgZneW1faWQYASABKAkSEQoJYmF0dGxl",
+            "X2lkGAIgASgJEjwKDmF0dGFja19hY3Rpb25zGAMgAygLMiQuUE9HT1Byb3Rv",
+            "cy5EYXRhLkJhdHRsZS5CYXR0bGVBY3Rpb24SRAoWbGFzdF9yZXRyaWV2ZWRf",
+            "YWN0aW9ucxgEIAEoCzIkLlBPR09Qcm90b3MuRGF0YS5CYXR0bGUuQmF0dGxl",
+            "QWN0aW9uEhcKD3BsYXllcl9sYXRpdHVkZRgFIAEoARIYChBwbGF5ZXJfbG9u",
+            "Z2l0dWRlGAYgASgBIuYBChNDYXRjaFBva2Vtb25NZXNzYWdlEhQKDGVuY291",
+            "bnRlcl9pZBgBIAEoBhIzCghwb2tlYmFsbBgCIAEoDjIhLlBPR09Qcm90b3Mu",
+            "SW52ZW50b3J5Lkl0ZW0uSXRlbUlkEh8KF25vcm1hbGl6ZWRfcmV0aWNsZV9z",
+            "aXplGAMgASgBEhYKDnNwYXduX3BvaW50X2lkGAQgASgJEhMKC2hpdF9wb2tl",
+            "bW9uGAUgASgIEhUKDXNwaW5fbW9kaWZpZXIYBiABKAESHwoXbm9ybWFsaXpl",
+            "ZF9oaXRfcG9zaXRpb24YByABKAEiGwoZQ2hlY2tBd2FyZGVkQmFkZ2VzTWVz",
+            "c2FnZSIxCh1DaGVja0NvZGVuYW1lQXZhaWxhYmxlTWVzc2FnZRIQCghjb2Rl",
+            "bmFtZRgBIAEoCSIoChRDbGFpbUNvZGVuYW1lTWVzc2FnZRIQCghjb2RlbmFt",
+            "ZRgBIAEoCSIaChhDb2xsZWN0RGFpbHlCb251c01lc3NhZ2UiIgogQ29sbGVj",
+            "dERhaWx5RGVmZW5kZXJCb251c01lc3NhZ2UicAoURGlza0VuY291bnRlck1l",
+            "c3NhZ2USFAoMZW5jb3VudGVyX2lkGAEgASgEEg8KB2ZvcnRfaWQYAiABKAkS",
+            "FwoPcGxheWVyX2xhdGl0dWRlGAMgASgBEhgKEHBsYXllcl9sb25naXR1ZGUY",
+            "BCABKAEiHgocRG93bmxvYWRJdGVtVGVtcGxhdGVzTWVzc2FnZSKqAQoiRG93",
+            "bmxvYWRSZW1vdGVDb25maWdWZXJzaW9uTWVzc2FnZRIsCghwbGF0Zm9ybRgB",
+            "IAEoDjIaLlBPR09Qcm90b3MuRW51bXMuUGxhdGZvcm0SGwoTZGV2aWNlX21h",
+            "bnVmYWN0dXJlchgCIAEoCRIUCgxkZXZpY2VfbW9kZWwYAyABKAkSDgoGbG9j",
+            "YWxlGAQgASgJEhMKC2FwcF92ZXJzaW9uGAUgASgNIicKF0Rvd25sb2FkU2V0",
+            "dGluZ3NNZXNzYWdlEgwKBGhhc2gYASABKAkiDQoLRWNob01lc3NhZ2UicwoQ",
+            "RW5jb3VudGVyTWVzc2FnZRIUCgxlbmNvdW50ZXJfaWQYASABKAYSFgoOc3Bh",
+            "d25fcG9pbnRfaWQYAiABKAkSFwoPcGxheWVyX2xhdGl0dWRlGAMgASgBEhgK",
+            "EHBsYXllcl9sb25naXR1ZGUYBCABKAEiUwogRW5jb3VudGVyVHV0b3JpYWxD",
+            "b21wbGV0ZU1lc3NhZ2USLwoKcG9rZW1vbl9pZBgBIAEoDjIbLlBPR09Qcm90",
+            "b3MuRW51bXMuUG9rZW1vbklkIkQKEUVxdWlwQmFkZ2VNZXNzYWdlEi8KCmJh",
+            "ZGdlX3R5cGUYASABKA4yGy5QT0dPUHJvdG9zLkVudW1zLkJhZGdlVHlwZSIq",
+            "ChRFdm9sdmVQb2tlbW9uTWVzc2FnZRISCgpwb2tlbW9uX2lkGAEgASgGInIK",
+            "GEZvcnREZXBsb3lQb2tlbW9uTWVzc2FnZRIPCgdmb3J0X2lkGAEgASgJEhIK",
+            "CnBva2Vtb25faWQYAiABKAQSFwoPcGxheWVyX2xhdGl0dWRlGAMgASgBEhgK",
+            "EHBsYXllcl9sb25naXR1ZGUYBCABKAEiSgoSRm9ydERldGFpbHNNZXNzYWdl",
+            "Eg8KB2ZvcnRfaWQYASABKAkSEAoIbGF0aXR1ZGUYAiABKAESEQoJbG9uZ2l0",
+            "dWRlGAMgASgBInIKGEZvcnRSZWNhbGxQb2tlbW9uTWVzc2FnZRIPCgdmb3J0",
+            "X2lkGAEgASgJEhIKCnBva2Vtb25faWQYAiABKAQSFwoPcGxheWVyX2xhdGl0",
+            "dWRlGAMgASgBEhgKEHBsYXllcl9sb25naXR1ZGUYBCABKAEihgEKEUZvcnRT",
+            "ZWFyY2hNZXNzYWdlEg8KB2ZvcnRfaWQYASABKAkSFwoPcGxheWVyX2xhdGl0",
+            "dWRlGAIgASgBEhgKEHBsYXllcl9sb25naXR1ZGUYAyABKAESFQoNZm9ydF9s",
+            "YXRpdHVkZRgEIAEoARIWCg5mb3J0X2xvbmdpdHVkZRgFIAEoASKdAQoVR2V0",
+            "QXNzZXREaWdlc3RNZXNzYWdlEiwKCHBsYXRmb3JtGAEgASgOMhouUE9HT1By",
+            "b3Rvcy5FbnVtcy5QbGF0Zm9ybRIbChNkZXZpY2VfbWFudWZhY3R1cmVyGAIg",
+            "ASgJEhQKDGRldmljZV9tb2RlbBgDIAEoCRIOCgZsb2NhbGUYBCABKAkSEwoL",
+            "YXBwX3ZlcnNpb24YBSABKA0iKgoWR2V0RG93bmxvYWRVcmxzTWVzc2FnZRIQ",
+            "Cghhc3NldF9pZBgBIAMoCSKGAQoUR2V0R3ltRGV0YWlsc01lc3NhZ2USDgoG",
+            "Z3ltX2lkGAEgASgJEhcKD3BsYXllcl9sYXRpdHVkZRgCIAEoARIYChBwbGF5",
+            "ZXJfbG9uZ2l0dWRlGAMgASgBEhQKDGd5bV9sYXRpdHVkZRgEIAEoARIVCg1n",
+            "eW1fbG9uZ2l0dWRlGAUgASgBIhcKFUdldEhhdGNoZWRFZ2dzTWVzc2FnZSJN",
+            "ChhHZXRJbmNlbnNlUG9rZW1vbk1lc3NhZ2USFwoPcGxheWVyX2xhdGl0dWRl",
+            "GAEgASgBEhgKEHBsYXllcl9sb25naXR1ZGUYAiABKAEiSAoTR2V0SW52ZW50",
+            "b3J5TWVzc2FnZRIZChFsYXN0X3RpbWVzdGFtcF9tcxgBIAEoAxIWCg5pdGVt",
+            "X2JlZW5fc2VlbhgCIAEoBSJwChRHZXRNYXBPYmplY3RzTWVzc2FnZRITCgdj",
+            "ZWxsX2lkGAEgAygEQgIQARIeChJzaW5jZV90aW1lc3RhbXBfbXMYAiADKANC",
+            "AhABEhAKCGxhdGl0dWRlGAMgASgBEhEKCWxvbmdpdHVkZRgEIAEoASISChBH",
+            "ZXRQbGF5ZXJNZXNzYWdlIi4KF0dldFBsYXllclByb2ZpbGVNZXNzYWdlEhMK",
+            "C3BsYXllcl9uYW1lGAEgASgJIh4KHEdldFN1Z2dlc3RlZENvZGVuYW1lc01l",
+            "c3NhZ2UiSwoXSW5jZW5zZUVuY291bnRlck1lc3NhZ2USFAoMZW5jb3VudGVy",
+            "X2lkGAEgASgDEhoKEmVuY291bnRlcl9sb2NhdGlvbhgCIAEoCSImChVMZXZl",
+            "bFVwUmV3YXJkc01lc3NhZ2USDQoFbGV2ZWwYASABKAUimwEKG01hcmtUdXRv",
+            "cmlhbENvbXBsZXRlTWVzc2FnZRI8ChN0dXRvcmlhbHNfY29tcGxldGVkGAEg",
+            "AygOMh8uUE9HT1Byb3Rvcy5FbnVtcy5UdXRvcmlhbFN0YXRlEh0KFXNlbmRf",
+            "bWFya2V0aW5nX2VtYWlscxgCIAEoCBIfChdzZW5kX3B1c2hfbm90aWZpY2F0",
+            "aW9ucxgDIAEoCCI+ChZOaWNrbmFtZVBva2Vtb25NZXNzYWdlEhIKCnBva2Vt",
+            "b25faWQYASABKAYSEAoIbmlja25hbWUYAiABKAkiOgoTUGxheWVyVXBkYXRl",
+            "TWVzc2FnZRIQCghsYXRpdHVkZRgBIAEoARIRCglsb25naXR1ZGUYAiABKAEi",
+            "YAobUmVjeWNsZUludmVudG9yeUl0ZW1NZXNzYWdlEjIKB2l0ZW1faWQYASAB",
+            "KA4yIS5QT0dPUHJvdG9zLkludmVudG9yeS5JdGVtLkl0ZW1JZBINCgVjb3Vu",
+            "dBgCIAEoBSIrChVSZWxlYXNlUG9rZW1vbk1lc3NhZ2USEgoKcG9rZW1vbl9p",
+            "ZBgBIAEoBiJPChBTZXRBdmF0YXJNZXNzYWdlEjsKDXBsYXllcl9hdmF0YXIY",
+            "AiABKAsyJC5QT0dPUHJvdG9zLkRhdGEuUGxheWVyLlBsYXllckF2YXRhciJe",
+            "ChlTZXRDb250YWN0U2V0dGluZ3NNZXNzYWdlEkEKEGNvbnRhY3Rfc2V0dGlu",
+            "Z3MYASABKAsyJy5QT0dPUHJvdG9zLkRhdGEuUGxheWVyLkNvbnRhY3RTZXR0",
+            "aW5ncyJEChlTZXRGYXZvcml0ZVBva2Vtb25NZXNzYWdlEhIKCnBva2Vtb25f",
+            "aWQYASABKAQSEwoLaXNfZmF2b3JpdGUYAiABKAgiQQoUU2V0UGxheWVyVGVh",
+            "bU1lc3NhZ2USKQoEdGVhbRgBIAEoDjIbLlBPR09Qcm90b3MuRW51bXMuVGVh",
+            "bUNvbG9yIhcKFVNmaWRhQWN0aW9uTG9nTWVzc2FnZSKXAQoVU3RhcnRHeW1C",
+            "YXR0bGVNZXNzYWdlEg4KBmd5bV9pZBgBIAEoCRIdChVhdHRhY2tpbmdfcG9r",
+            "ZW1vbl9pZHMYAiADKAYSHAoUZGVmZW5kaW5nX3Bva2Vtb25faWQYAyABKAQS",
+            "FwoPcGxheWVyX2xhdGl0dWRlGAQgASgBEhgKEHBsYXllcl9sb25naXR1ZGUY",
+            "BSABKAEiKwoVVXBncmFkZVBva2Vtb25NZXNzYWdlEhIKCnBva2Vtb25faWQY",
+            "ASABKAQiTAoRVXNlSW5jZW5zZU1lc3NhZ2USNwoMaW5jZW5zZV90eXBlGAEg",
+            "ASgOMiEuUE9HT1Byb3Rvcy5JbnZlbnRvcnkuSXRlbS5JdGVtSWQiewoVVXNl",
+            "SXRlbUNhcHR1cmVNZXNzYWdlEjIKB2l0ZW1faWQYASABKA4yIS5QT0dPUHJv",
+            "dG9zLkludmVudG9yeS5JdGVtLkl0ZW1JZBIUCgxlbmNvdW50ZXJfaWQYAiAB",
+            "KAYSGAoQc3Bhd25fcG9pbnRfZ3VpZBgDIAEoCSJBChpVc2VJdGVtRWdnSW5j",
+            "dWJhdG9yTWVzc2FnZRIPCgdpdGVtX2lkGAEgASgJEhIKCnBva2Vtb25faWQY",
+            "AiABKAQiigEKEVVzZUl0ZW1HeW1NZXNzYWdlEjIKB2l0ZW1faWQYASABKA4y",
+            "IS5QT0dPUHJvdG9zLkludmVudG9yeS5JdGVtLkl0ZW1JZBIOCgZneW1faWQY",
+            "AiABKAkSFwoPcGxheWVyX2xhdGl0dWRlGAMgASgBEhgKEHBsYXllcl9sb25n",
+            "aXR1ZGUYBCABKAEiXgoUVXNlSXRlbVBvdGlvbk1lc3NhZ2USMgoHaXRlbV9p",
+            "ZBgBIAEoDjIhLlBPR09Qcm90b3MuSW52ZW50b3J5Lkl0ZW0uSXRlbUlkEhIK",
+            "CnBva2Vtb25faWQYAiABKAQiXgoUVXNlSXRlbVJldml2ZU1lc3NhZ2USMgoH",
+            "aXRlbV9pZBgBIAEoDjIhLlBPR09Qcm90b3MuSW52ZW50b3J5Lkl0ZW0uSXRl",
+            "bUlkEhIKCnBva2Vtb25faWQYAiABKAQiSwoVVXNlSXRlbVhwQm9vc3RNZXNz",
+            "YWdlEjIKB2l0ZW1faWQYASABKA4yIS5QT0dPUHJvdG9zLkludmVudG9yeS5J",
+            "dGVtLkl0ZW1JZFAAUAFQAlADYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor, global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor, global::POGOProtos.Enums.POGOProtosEnumsReflection.Descriptor, global::POGOProtos.Data.Player.POGOProtosDataPlayerReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::POGOProtos.Inventory.Item.POGOProtosInventoryItemReflection.Descriptor, global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor, global::POGOProtos.Enums.POGOProtosEnumsReflection.Descriptor, global::POGOProtos.Data.Player.POGOProtosDataPlayerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.AddFortModifierMessage), global::POGOProtos.Networking.Requests.Messages.AddFortModifierMessage.Parser, new[]{ "ModifierType", "FortId", "PlayerLatitude", "PlayerLongitude" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.AttackGymMessage), global::POGOProtos.Networking.Requests.Messages.AttackGymMessage.Parser, new[]{ "GymId", "BattleId", "AttackActions", "LastRetrievedActions", "PlayerLatitude", "PlayerLongitude" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.CatchPokemonMessage), global::POGOProtos.Networking.Requests.Messages.CatchPokemonMessage.Parser, new[]{ "EncounterId", "Pokeball", "NormalizedReticleSize", "SpawnPointGuid", "HitPokemon", "SpinModifier", "NormalizedHitPosition" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.CatchPokemonMessage), global::POGOProtos.Networking.Requests.Messages.CatchPokemonMessage.Parser, new[]{ "EncounterId", "Pokeball", "NormalizedReticleSize", "SpawnPointId", "HitPokemon", "SpinModifier", "NormalizedHitPosition" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.CheckAwardedBadgesMessage), global::POGOProtos.Networking.Requests.Messages.CheckAwardedBadgesMessage.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.CheckCodenameAvailableMessage), global::POGOProtos.Networking.Requests.Messages.CheckCodenameAvailableMessage.Parser, new[]{ "Codename" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.ClaimCodenameMessage), global::POGOProtos.Networking.Requests.Messages.ClaimCodenameMessage.Parser, new[]{ "Codename" }, null, null, null),
@@ -169,6 +171,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.SetContactSettingsMessage), global::POGOProtos.Networking.Requests.Messages.SetContactSettingsMessage.Parser, new[]{ "ContactSettings" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.SetFavoritePokemonMessage), global::POGOProtos.Networking.Requests.Messages.SetFavoritePokemonMessage.Parser, new[]{ "PokemonId", "IsFavorite" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.SetPlayerTeamMessage), global::POGOProtos.Networking.Requests.Messages.SetPlayerTeamMessage.Parser, new[]{ "Team" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.SfidaActionLogMessage), global::POGOProtos.Networking.Requests.Messages.SfidaActionLogMessage.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.StartGymBattleMessage), global::POGOProtos.Networking.Requests.Messages.StartGymBattleMessage.Parser, new[]{ "GymId", "AttackingPokemonIds", "DefendingPokemonId", "PlayerLatitude", "PlayerLongitude" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.UpgradePokemonMessage), global::POGOProtos.Networking.Requests.Messages.UpgradePokemonMessage.Parser, new[]{ "PokemonId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::POGOProtos.Networking.Requests.Messages.UseIncenseMessage), global::POGOProtos.Networking.Requests.Messages.UseIncenseMessage.Parser, new[]{ "IncenseType" }, null, null, null),
@@ -221,9 +224,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "modifier_type" field.</summary>
     public const int ModifierTypeFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId modifierType_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId modifierType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ModifierType {
+    public global::POGOProtos.Inventory.Item.ItemId ModifierType {
       get { return modifierType_; }
       set {
         modifierType_ = value;
@@ -364,7 +367,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            modifierType_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            modifierType_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 18: {
@@ -667,7 +670,7 @@ namespace POGOProtos.Networking.Requests.Messages {
       encounterId_ = other.encounterId_;
       pokeball_ = other.pokeball_;
       normalizedReticleSize_ = other.normalizedReticleSize_;
-      spawnPointGuid_ = other.spawnPointGuid_;
+      spawnPointId_ = other.spawnPointId_;
       hitPokemon_ = other.hitPokemon_;
       spinModifier_ = other.spinModifier_;
       normalizedHitPosition_ = other.normalizedHitPosition_;
@@ -691,9 +694,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "pokeball" field.</summary>
     public const int PokeballFieldNumber = 2;
-    private int pokeball_;
+    private global::POGOProtos.Inventory.Item.ItemId pokeball_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Pokeball {
+    public global::POGOProtos.Inventory.Item.ItemId Pokeball {
       get { return pokeball_; }
       set {
         pokeball_ = value;
@@ -711,14 +714,14 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    /// <summary>Field number for the "spawn_point_guid" field.</summary>
-    public const int SpawnPointGuidFieldNumber = 4;
-    private string spawnPointGuid_ = "";
+    /// <summary>Field number for the "spawn_point_id" field.</summary>
+    public const int SpawnPointIdFieldNumber = 4;
+    private string spawnPointId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string SpawnPointGuid {
-      get { return spawnPointGuid_; }
+    public string SpawnPointId {
+      get { return spawnPointId_; }
       set {
-        spawnPointGuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        spawnPointId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -771,7 +774,7 @@ namespace POGOProtos.Networking.Requests.Messages {
       if (EncounterId != other.EncounterId) return false;
       if (Pokeball != other.Pokeball) return false;
       if (NormalizedReticleSize != other.NormalizedReticleSize) return false;
-      if (SpawnPointGuid != other.SpawnPointGuid) return false;
+      if (SpawnPointId != other.SpawnPointId) return false;
       if (HitPokemon != other.HitPokemon) return false;
       if (SpinModifier != other.SpinModifier) return false;
       if (NormalizedHitPosition != other.NormalizedHitPosition) return false;
@@ -784,7 +787,7 @@ namespace POGOProtos.Networking.Requests.Messages {
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
       if (Pokeball != 0) hash ^= Pokeball.GetHashCode();
       if (NormalizedReticleSize != 0D) hash ^= NormalizedReticleSize.GetHashCode();
-      if (SpawnPointGuid.Length != 0) hash ^= SpawnPointGuid.GetHashCode();
+      if (SpawnPointId.Length != 0) hash ^= SpawnPointId.GetHashCode();
       if (HitPokemon != false) hash ^= HitPokemon.GetHashCode();
       if (SpinModifier != 0D) hash ^= SpinModifier.GetHashCode();
       if (NormalizedHitPosition != 0D) hash ^= NormalizedHitPosition.GetHashCode();
@@ -804,15 +807,15 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
       if (Pokeball != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(Pokeball);
+        output.WriteEnum((int) Pokeball);
       }
       if (NormalizedReticleSize != 0D) {
         output.WriteRawTag(25);
         output.WriteDouble(NormalizedReticleSize);
       }
-      if (SpawnPointGuid.Length != 0) {
+      if (SpawnPointId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(SpawnPointGuid);
+        output.WriteString(SpawnPointId);
       }
       if (HitPokemon != false) {
         output.WriteRawTag(40);
@@ -835,13 +838,13 @@ namespace POGOProtos.Networking.Requests.Messages {
         size += 1 + 8;
       }
       if (Pokeball != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Pokeball);
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Pokeball);
       }
       if (NormalizedReticleSize != 0D) {
         size += 1 + 8;
       }
-      if (SpawnPointGuid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SpawnPointGuid);
+      if (SpawnPointId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SpawnPointId);
       }
       if (HitPokemon != false) {
         size += 1 + 1;
@@ -869,8 +872,8 @@ namespace POGOProtos.Networking.Requests.Messages {
       if (other.NormalizedReticleSize != 0D) {
         NormalizedReticleSize = other.NormalizedReticleSize;
       }
-      if (other.SpawnPointGuid.Length != 0) {
-        SpawnPointGuid = other.SpawnPointGuid;
+      if (other.SpawnPointId.Length != 0) {
+        SpawnPointId = other.SpawnPointId;
       }
       if (other.HitPokemon != false) {
         HitPokemon = other.HitPokemon;
@@ -896,7 +899,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             break;
           }
           case 16: {
-            Pokeball = input.ReadInt32();
+            pokeball_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 25: {
@@ -904,7 +907,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             break;
           }
           case 34: {
-            SpawnPointGuid = input.ReadString();
+            SpawnPointId = input.ReadString();
             break;
           }
           case 40: {
@@ -5479,8 +5482,8 @@ namespace POGOProtos.Networking.Requests.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
-        output.WriteRawTag(8);
-        output.WriteUInt64(PokemonId);
+        output.WriteRawTag(9);
+        output.WriteFixed64(PokemonId);
       }
       if (Nickname.Length != 0) {
         output.WriteRawTag(18);
@@ -5492,7 +5495,7 @@ namespace POGOProtos.Networking.Requests.Messages {
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(PokemonId);
+        size += 1 + 8;
       }
       if (Nickname.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
@@ -5521,8 +5524,8 @@ namespace POGOProtos.Networking.Requests.Messages {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            PokemonId = input.ReadUInt64();
+          case 9: {
+            PokemonId = input.ReadFixed64();
             break;
           }
           case 18: {
@@ -5715,9 +5718,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -5812,7 +5815,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 16: {
@@ -6450,6 +6453,98 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  /// <summary>
+  ///  No message needed.
+  /// </summary>
+  public sealed partial class SfidaActionLogMessage : pb::IMessage<SfidaActionLogMessage> {
+    private static readonly pb::MessageParser<SfidaActionLogMessage> _parser = new pb::MessageParser<SfidaActionLogMessage>(() => new SfidaActionLogMessage());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SfidaActionLogMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[42]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SfidaActionLogMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SfidaActionLogMessage(SfidaActionLogMessage other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SfidaActionLogMessage Clone() {
+      return new SfidaActionLogMessage(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SfidaActionLogMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SfidaActionLogMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SfidaActionLogMessage other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
   public sealed partial class StartGymBattleMessage : pb::IMessage<StartGymBattleMessage> {
     private static readonly pb::MessageParser<StartGymBattleMessage> _parser = new pb::MessageParser<StartGymBattleMessage>(() => new StartGymBattleMessage());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6457,7 +6552,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[42]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6679,7 +6774,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[43]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6796,7 +6891,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[44]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6823,9 +6918,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "incense_type" field.</summary>
     public const int IncenseTypeFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId incenseType_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId incenseType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId IncenseType {
+    public global::POGOProtos.Inventory.Item.ItemId IncenseType {
       get { return incenseType_; }
       set {
         incenseType_ = value;
@@ -6897,7 +6992,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            incenseType_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            incenseType_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
         }
@@ -6913,7 +7008,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[45]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6942,9 +7037,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -7062,7 +7157,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 17: {
@@ -7086,7 +7181,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[46]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7231,7 +7326,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[47]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7261,9 +7356,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -7404,7 +7499,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 18: {
@@ -7432,7 +7527,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[48]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7460,9 +7555,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -7557,7 +7652,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 16: {
@@ -7577,7 +7672,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[49]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7605,9 +7700,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -7702,7 +7797,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
           case 16: {
@@ -7722,7 +7817,7 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[50]; }
+      get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7749,9 +7844,9 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
-    private global::POGOProtos.Inventory.ItemId itemId_ = 0;
+    private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::POGOProtos.Inventory.ItemId ItemId {
+    public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
         itemId_ = value;
@@ -7823,7 +7918,7 @@ namespace POGOProtos.Networking.Requests.Messages {
             input.SkipLastField();
             break;
           case 8: {
-            itemId_ = (global::POGOProtos.Inventory.ItemId) input.ReadEnum();
+            itemId_ = (global::POGOProtos.Inventory.Item.ItemId) input.ReadEnum();
             break;
           }
         }
