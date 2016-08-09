@@ -22,6 +22,10 @@ In order to get this up a running, you have to run through a couple of steps:
 
 Once you have everything set up, just start up the sample project on your host device, then open the Pokemon Go app on your phone/tablet. You should start to see the api requests and responses populate the console window. These aren't very readable at the moment, but you can take a look at the generated log file when you end the proxy.
 
+## Certificate Pinning
+
+As of version 0.31, Niantic added certificate pinning to Pokemon Go. In order to use this MITM proxy, you have to do a little extra work. You can either modify the apk to accept other certificates [as shown here](https://eaton-works.com/2016/07/31/reverse-engineering-and-removing-pokemon-gos-certificate-pinning/), or you can use something like XPosed to get around the certificate pinning on the fly.
+
 # Dependencies
 
 This project is built in Visual Studio 2015 with the following nuget packages:
